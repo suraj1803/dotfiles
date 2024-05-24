@@ -1,2 +1,2 @@
 # Screenshot
-![Setup Screenshot](setup.png)
+![Setup Screenshot](setup)
