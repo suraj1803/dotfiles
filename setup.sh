@@ -1,6 +1,6 @@
 #!/bin/bash
 # Clone dotfiles repository
-git clone https://github.com/suraj1803/dotfiles.git ~/dotfiles
+# git clone https://github.com/suraj1803/dotfiles.git ~/dotfiles
 
 # Create symlinks
 ln -sf ~/dotfiles/nvim ~/.config/nvim

@@ -4,14 +4,14 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Base configurations
-config.default_domain = 'WSL:Ubuntu-24.04'
-config.tab_bar_at_bottom = true 
+-- config.default_domain = 'WSL:Ubuntu-24.04'
+config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false-- Set to false for a simpler look
 config.audible_bell = "Disabled"
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.tab_max_width = 20
--- config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font = wezterm.font("JetBrainsMonoNerdFont")
 config.font_size = 14 -- Set to a smaller size for both terminal and tab bar
 
 -- Tab bar color styling with blur effect
