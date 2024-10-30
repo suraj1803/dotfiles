@@ -4,34 +4,14 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Base configurations
--- config.default_domain = 'WSL:Ubuntu-24.04'
 config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false-- Set to false for a simpler look
+config.use_fancy_tab_bar = true
 config.audible_bell = "Disabled"
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
-config.tab_max_width = 20
+config.tab_max_width = 5
 config.font = wezterm.font("JetBrainsMonoNerdFont")
-config.font_size = 14 -- Set to a smaller size for both terminal and tab bar
-
--- Tab bar color styling with blur effect
-config.colors = {
-  tab_bar = {
-    background = "#1d2021", -- Gruvbox Dark Hard background
-
-    -- Set the active tab background and foreground colors
-    active_tab = {
-      bg_color = "#000000", -- Black
-      fg_color = "#ebdbb2", -- Gruvbox Light text color (adjust as needed)
-    },
-
-    -- Set the inactive tab background and foreground colors
-    inactive_tab = {
-      bg_color = "#3c3836", -- Darker shade for inactive tabs
-      fg_color = "#a89984", -- Gruvbox faded text color
-    },
-  },
-}
+config.font_size = 15
 
 -- Keyboard shortcuts
 local act = wezterm.action
@@ -52,7 +32,16 @@ config.window_padding = {
     bottom = 0,
 }
 
--- config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.window_frame = {
+  font_size = 10,
+  inactive_titlebar_bg = '#353535',
+  active_titlebar_bg = '#1D2021',
+  inactive_titlebar_fg = '#cccccc',
+  active_titlebar_fg = '#ffffff',
+  button_fg = '#cccccc',
+  button_bg = '#2b2042',
+}
+
 config.color_scheme = 'Gruvbox dark, hard (base16)'
 
 return config
