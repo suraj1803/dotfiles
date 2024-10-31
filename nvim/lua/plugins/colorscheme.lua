@@ -30,7 +30,7 @@ return  {
     vim.g.gruvbox_material_enable_bold = true
     vim.g.gruvbox_material_background = 'hard'
     vim.g.gruvbox_material_foreground = 'original'
-    -- vim.g.gruvbox_material_transparent_background = 1
+    vim.g.gruvbox_material_transparent_background = 1
     vim.cmd.colorscheme('gruvbox-material')
     vim.o.background = "dark" -- or "light" for light mode
   end
