@@ -77,3 +77,9 @@ vim.api.nvim_set_keymap('n', '<leader>tv', ':vsplit | terminal<CR>', { noremap =
 vim.api.nvim_set_keymap('t', '<C-n>', [[<C-\><C-n>]], { noremap = true, silent = true })
 
 
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>d',
+  '<cmd>lua vim.diagnostic.open_float({ scope = "line" })<CR>',
+  { noremap = true, silent = true }
+)
