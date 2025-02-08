@@ -6,21 +6,18 @@ return {
     "windwp/nvim-ts-autotag",
   },
   config = function()
-    -- import nvim-treesitter plugin
+    -- Import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
-    -- configure treesitter
-    treesitter.setup({ -- enable syntax highlighting
+    -- Configure treesitter
+    treesitter.setup({
+      -- Enable syntax highlighting
       highlight = {
         enable = true,
       },
-      -- enable indentation
+      -- Enable indentation
       indent = { enable = true },
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = {
-        enable = true,
-      },
-      -- ensure these language parsers are installed
+      -- Ensure these language parsers are installed
       ensure_installed = {
         "json",
         "javascript",
@@ -51,5 +48,8 @@ return {
         },
       },
     })
+
+    -- ✅ Fix: Call `setup()` for `nvim-ts-autotag` separately
+    require("nvim-ts-autotag").setup()
   end,
 }
