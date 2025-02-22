@@ -1,14 +1,13 @@
 theme=catppuccin-mocha
 background=#000000
-font-family="JetBrainsMonoNerdFont"
-font-size=18
+font-family="JetBrainsMonoNerdFont Mono"
+font-size=17
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
+adjust-cell-height=2%
 
 # keybindings
 keybind = ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
 keybind = alt+f=toggle_fullscreen
-
-
