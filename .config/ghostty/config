@@ -1,0 +1,14 @@
+theme=catppuccin-mocha
+background=#000000
+font-family="JetBrainsMonoNerdFont"
+font-size=18
+maximize=true
+shell-integration-features=no-cursor 
+window-padding-balance=true
+
+# keybindings
+keybind = ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
+keybind = alt+f=toggle_fullscreen
+
+
