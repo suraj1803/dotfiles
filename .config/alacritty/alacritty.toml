@@ -1,0 +1,163 @@
+[env]
+TERM = "xterm-256color"
+[general]
+live_config_reload = true
+
+[window]
+dimensions = {columns = 104, lines = 25}
+# padding = {x = 2, y = 2}
+dynamic_padding =true
+
+# title = ''
+dynamic_title = false
+opacity = 0.55
+
+[font]
+normal = {family = 'MesloLGS Nerd Font'}
+size = 16
+
+
+# # Gruvbox Dark Hard Colorscheme
+# [colors.primary]
+# background = '#1d2021' 
+# foreground = '#ebdbb2' 
+#
+# [colors.normal]
+# black   = '0x1d2021'   
+# red     = '0xcc241d'   
+# green   = '0x98971a'  
+# yellow  = '0xd79921' 
+# blue    = '0x458588'
+# magenta = '0xb16286'
+# cyan    = '0x689d6a'   
+# white   = '0xa89984'  
+#
+# [colors.bright]
+# black   = '0x928374'   
+# red     = '0xfb4934'   
+# green   = '0xb8bb26'  
+# yellow  = '0xfabd2f' 
+# blue    = '0x83a598'
+# magenta = '0xd3869b'
+# cyan    = '0x8ec07c'
+# white   = '0xebdbb2'   
+#
+# [colors.cursor]
+# text = '0x1d2021'        
+# cursor = '0xebdbb2'      
+#
+# [colors.selection]
+# text = '0xebdbb2'        
+# background = '0x665c54'  		
+
+[keyboard]
+bindings = [
+{ key = "c", mods = "Control", action = "Copy" },
+{ key = "v", mods = "Control", action = "Paste" },
+]
+
+# [colors.primary]
+# background = '#1E1E2E' # base
+# foreground = '#CDD6F4' # text
+# # Bright and dim foreground colors
+# dim_foreground = '#CDD6F4' # text
+# bright_foreground = '#CDD6F4' # text
+#
+# # Cursor colors
+# [colors.cursor]
+# text = '#1E1E2E' # base
+# cursor = '#F5E0DC' # rosewater
+#
+# [colors.vi_mode_cursor]
+# text = '#1E1E2E' # base
+# cursor = '#B4BEFE' # lavender
+#
+# # Search colors
+# [colors.search.matches]
+# foreground = '#1E1E2E' # base
+# background = '#A6ADC8' # subtext0
+#
+# [colors.search.focused_match]
+# foreground = '#1E1E2E' # base
+# background = '#A6E3A1' # green
+#
+# [colors.footer_bar]
+# foreground = '#1E1E2E' # base
+# background = '#A6ADC8' # subtext0
+#
+# # Keyboard regex hints
+# [colors.hints.start]
+# foreground = '#1E1E2E' # base
+# background = '#F9E2AF' # yellow
+#
+# [colors.hints.end]
+# foreground = '#1E1E2E' # base
+# background = '#A6ADC8' # subtext0
+#
+# # Selection colors
+# [colors.selection]
+# text = '#1E1E2E' # base
+# background = '#F5E0DC' # rosewater
+#
+# # Normal colors
+# [colors.normal]
+# black = '#45475A' # surface1
+# red = '#F38BA8' # red
+# green = '#A6E3A1' # green
+# yellow = '#F9E2AF' # yellow
+# blue = '#89B4FA' # blue
+# magenta = '#F5C2E7' # pink
+# cyan = '#94E2D5' # teal
+# white = '#BAC2DE' # subtext1
+#
+# # Bright colors
+# [colors.bright]
+# black = '#585B70' # surface2
+# red = '#F38BA8' # red
+# green = '#A6E3A1' # green
+# yellow = '#F9E2AF' # yellow
+# blue = '#89B4FA' # blue
+# magenta = '#F5C2E7' # pink
+# cyan = '#94E2D5' # teal
+# white = '#A6ADC8' # subtext0
+#
+# # Dim colors
+# [colors.dim]
+# black = '#45475A' # surface1
+# red = '#F38BA8' # red
+# green = '#A6E3A1' # green
+# yellow = '#F9E2AF' # yellow
+# blue = '#89B4FA' # blue
+# magenta = '#F5C2E7' # pink
+# cyan = '#94E2D5' # teal
+# white = '#BAC2DE' # subtext1
+
+# Gnome (Gnome Terminal Default)
+
+# Default colors
+[colors.primary]
+background = '#000000'
+foreground = '#ffffff'
+
+# Normal colors
+[colors.normal]
+black      = '#171421'
+red        = '#c01c28'
+green      = '#26a269'
+yellow     = '#a2734c'
+blue       = '#12488b'
+magenta    = '#a347ba'
+cyan       = '#2aa1b3'
+white      = '#d0cfcc'
+
+# Bright colors
+[colors.bright]
+black      = '#5e5c64'
+red        = '#f66151'
+green      = '#33d17a'
+yellow     = '#e9ad0c'
+blue       = '#2a7bde'
+magenta    = '#c061cb'
+cyan       = '#33c7de'
+white      = '#ffffff'
+
