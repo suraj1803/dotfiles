@@ -10,11 +10,11 @@ dynamic_padding =true
 
 # title = ''
 dynamic_title = false
-# opacity = 0.55
+opacity = 0.65
 
 [font]
 normal = {family = 'JetBrainsMonoNerdFont'}
-size = 17
+size = 15
 
 
 # # Gruvbox Dark Hard Colorscheme

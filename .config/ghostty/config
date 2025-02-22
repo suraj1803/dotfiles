@@ -1,12 +1,14 @@
 theme=catppuccin-mocha
 background=#000000
 font-family="FiraCodeNerdFontMono"
-font-size=17
+font-size=19
 #maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
 window-height=32
 window-width=120
+window-decoration=none
+# gtk-titlebar=false
 
 # keybindings
 keybind = ctrl+c=copy_to_clipboard
