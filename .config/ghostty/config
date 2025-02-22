@@ -1,11 +1,12 @@
 theme=catppuccin-mocha
 background=#000000
-font-family="JetBrainsMonoNerdFont Mono"
+font-family="FiraCodeNerdFontMono"
 font-size=17
-maximize=true
+#maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
-adjust-cell-height=2%
+window-height=32
+window-width=120
 
 # keybindings
 keybind = ctrl+c=copy_to_clipboard
