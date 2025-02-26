@@ -1,7 +1,7 @@
 theme=catppuccin-mocha
 background=#000000
-font-family="FiraCodeNerdFontMono"
-font-size=19
+font-family="HackNerdFontMono"
+font-size=18
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
