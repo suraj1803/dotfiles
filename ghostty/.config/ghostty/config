@@ -1,7 +1,7 @@
 theme=catppuccin-mocha
 background=#000000
 font-family="HackNerdFontMono"
-font-size=18
+font-size=19
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
@@ -11,6 +11,6 @@ window-width=120
 # gtk-titlebar=false
 
 # keybindings
-keybind = ctrl+c=copy_to_clipboard
+keybind = performable:ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
 keybind = alt+f=toggle_fullscreen

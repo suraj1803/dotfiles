@@ -30,11 +30,11 @@ return {
 				ensure_installed = {
 					"html",
 					"cssls",
+					"ts_ls",
 					"lua_ls",
 					"emmet_ls",
 					"pyright",
 					"clangd",
-					"typescript-language-server",
 				},
 			})
 

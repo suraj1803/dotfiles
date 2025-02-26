@@ -1,12 +1,22 @@
--- return {
--- 	"nvim-lualine/lualine.nvim",
--- 	dependencies = { "nvim-tree/nvim-web-devicons" },
--- }
-
 return {
-	"echasnovski/mini.nvim",
-	version = "*",
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		require("mini.statusline").setup()
+		-- Lua
+		require("lualine").setup({
+			options = {
+				-- ... your lualine config
+				theme = "tokyonight",
+				-- ... your lualine config
+			},
+		})
 	end,
 }
+
+-- return {
+-- 	"echasnovski/mini.nvim",
+-- 	version = "*",
+-- 	config = function()
+-- 		require("mini.statusline").setup()
+-- 	end,
+-- }
