@@ -1,12 +1,13 @@
 theme=catppuccin-mocha
 background=#000000
-font-family="HackNerdFontMono"
+font-family="MesloLGS Nerd Font Mono"
 font-size=19
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
 window-height=32
 window-width=120
+background-opacity=0.78
 # window-decoration=none
 # gtk-titlebar=false
 
