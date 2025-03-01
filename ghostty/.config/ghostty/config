@@ -1,15 +1,15 @@
 theme=catppuccin-mocha
 background=#000000
-font-family="MesloLGS Nerd Font Mono"
-font-size=19
+font-family="MesloLGS Nerd Font"
+font-size=21
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
 window-height=32
 window-width=120
-background-opacity=0.78
-# window-decoration=none
-# gtk-titlebar=false
+background-opacity=0.7
+window-decoration=none
+gtk-titlebar=false
 
 # keybindings
 keybind = performable:ctrl+c=copy_to_clipboard
