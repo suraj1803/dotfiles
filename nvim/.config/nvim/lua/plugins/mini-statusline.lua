@@ -6,7 +6,7 @@ return {
 		require("lualine").setup({
 			options = {
 				-- ... your lualine config
-				theme = "tokyonight",
+				theme = "auto",
 				-- ... your lualine config
 			},
 		})
