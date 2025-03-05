@@ -6,7 +6,6 @@ font pango:Droid Sans Mono 7
 for_window [class="^.*"] border pixel 1
                           # class                 border   backgr.  text    indicator child_border
 # for_window [class="^.*"] client.focused          #99ff99  #285577  #ffffff #3daee9   #285577
-
 # client.focused          #ffb6c1 #ff80ab #ffffff #ff6699   #ff80ab
 # client.focused_inactive #ffccd5 #ff99b6 #ffffff #ffb3c6   #ff99b6
 # client.unfocused        #ffdce5 #ffb6c1 #ffffff #ffccd5   #ffb6c1
@@ -166,18 +165,19 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
-# gaps inner 3
-# gaps outer 3
+gaps inner 3
+gaps outer 3
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status -c ~/.config/i3/i3status.conf
-}
+# bar {
+#         status_command i3status -c ~/.config/i3/i3status.conf
+# }
 
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom -b
 exec --no-startup-id setxkbmap -option caps:super
+exec_always ~/.config/polybar/launch.sh
 
 
 # exec --no-startup-id redshift
