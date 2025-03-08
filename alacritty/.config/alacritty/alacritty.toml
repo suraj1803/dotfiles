@@ -1,0 +1,23 @@
+[general]
+live_config_reload = true
+[window]
+dynamic_padding = true
+# opacity = 0.85
+
+[font]
+normal = {family = 'MesloLGSNerdFontMono'}
+size = 17
+
+[colors.primary]
+foreground = "#FFFFFF"
+background = "#000000"
+
+[cursor]
+style = {shape = "Block", blinking = "Off"}
+
+[keyboard]
+bindings = [
+{ key = "c", mods = "Control|Shift", action = "copy" },
+{ key = "v", mods = "Control", action = "paste" },
+]
+
