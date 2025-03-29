@@ -1,13 +1,15 @@
-theme=catppuccin-mocha
-background=#000000
+theme="tokyonight"
+#background=#000000
 font-family="MesloLGS Nerd Font"
-font-size=19
+font-size=17
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
-background-opacity=0.8
+#background-opacity=0.8
 window-decoration=none
 gtk-titlebar=false
+window-padding-x = 0
+window-padding-y = 0
 
 # keybindings
 keybind = performable:ctrl+c=copy_to_clipboard
