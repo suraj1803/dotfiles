@@ -1,13 +1,13 @@
-theme="tokyonight"
-#background=#000000
-font-family="MesloLGS Nerd Font"
-font-size=17
+theme="iTerm2 Default"
+background=#000000
+font-family="CaskaydiaMono Nerd Font Mono"
+font-size=14
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
 #background-opacity=0.8
-window-decoration=none
-gtk-titlebar=false
+#window-decoration=none
+#gtk-titlebar=false
 window-padding-x = 0
 window-padding-y = 0
 
