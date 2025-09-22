@@ -1,21 +1,23 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
 
-  "modules-center": ["clock" ],
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "clock",
+  ],
 
   "modules-right": [
     "pulseaudio",
-    // "custom/uptime",
     "backlight",
     "battery",
     "network",
     "cpu",
-    // "memory",
-    // "custom/docker",
     "tray",
-    "custom/lock",
+    // "custom/lock",
     "custom/power"
   ],
 
@@ -25,6 +27,12 @@
       "active": "",
       "default": ""
     }
+  },
+
+  "hyprland/window": {
+    "max-length": 60,
+    "separate-outputs": false,
+    "tooltip": false
   },
 
   "tray": {
@@ -56,7 +64,6 @@
     "interval": 5,
     "tooltip": false,
     "on-click": "nm-connection-editor"
-
   },
 
   "cpu": {

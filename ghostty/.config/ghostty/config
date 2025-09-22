@@ -8,8 +8,8 @@ window-padding-balance=true
 background-opacity=0.6
 #window-decoration=none
 #gtk-titlebar=false
-window-padding-x = 0
-window-padding-y = 0
+#window-padding-x = 0
+#window-padding-y = 0
 
 # keybindings
 keybind = performable:ctrl+c=copy_to_clipboard
