@@ -3,11 +3,11 @@
   "position": "top",
 
   "modules-left": [
-    "hyprland/workspaces"
+    "clock",
   ],
 
   "modules-center": [
-    "clock",
+    "hyprland/workspaces",
   ],
 
   "modules-right": [
@@ -53,7 +53,7 @@
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d/%m/%Y - %H:%M:%S}",
+    "format": "{:%d/%m/%Y - %H:%M}",
     "interval": 1
   },
 
