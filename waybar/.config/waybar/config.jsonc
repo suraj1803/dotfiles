@@ -1,23 +1,17 @@
 {
+    "reload_style_on_change": true,
     "layer": "top",
     "position": "top",
+    "modules-left": ["hyprland/workspaces"],
 
-    "modules-left": [
-        "clock",
-    ],
-
-    "modules-center": [
-        "hyprland/workspaces",
-    ],
+    "modules-center": ["clock"],
 
     "modules-right": [
         "pulseaudio",
-        // "backlight",
         "battery",
         "network",
         "cpu",
         "tray",
-        // "custom/lock",
         "custom/power"
     ],
 
@@ -29,65 +23,49 @@
         }
     },
 
-    "hyprland/window": {
-        "max-length": 60,
-        "separate-outputs": false,
-        "tooltip": false
-    },
-
     "tray": {
-        "icon-size": 20,
-        "spacing": 10
-    },
-
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
-    },
-
-    "clock": {
-        "timezone": "Asia/Kolkata",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%d/%m/%Y - %H:%M}",
-        "interval": 1
+        "icon-size": 15,
+        "spacing": 15
     },
 
     "battery": {
-        "format": "󰂀 {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-full": "󰂀 {capacity}%",
-        "tooltip": false,
-        "interval": 10,
-        "on-click": "gnome-power-statistics"
+        "format": "{capacity}% {icon}",
+        "format-discharging": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-plugged": " {capacity}%",
+        "format-icons": {
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "format-full": "󰂅 {capacity}%",
+        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+        "interval": 5,
+        "on-click": "omarchy-menu power",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        }
     },
-
-    "backlight": {
-        "format": "󰃞 {percentage}%",
-        "device": "intel_backlight",
-        "tooltip": false,
-        "interval": 2,
-        "on-click": "brightnessctl set +10%"
+    "clock": {
+        "timezone": "Asia/Kolkata",
+        "tooltip-format": "<big>{:%A, %b %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%A, %b %d - %I:%M %p}",
+        "interval": 1
     },
-
 
     "network": {
         "format-wifi": "󰤢 {bandwidthDownBits}",
         "format-ethernet": "󰈀 {bandwidthDownBits}",
         "format-disconnected": "󰤠 No Network",
         "interval": 5,
-        "tooltip": false,
-        "on-click": "nm-connection-editor"
+        "tooltip": false
     },
 
     "cpu": {
         "interval": 1,
         "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
 
     "memory": {
@@ -95,12 +73,17 @@
         "format": "  {used:0.1f}G/{total:0.1f}G"
     },
 
+    "custom/uptime": {
+        "format": "{}",
+        "interval": 1600,
+        "exec": "sh -c '(uptime -p)'"
+    },
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "",
         "format-icons": {
-            "default": ["", "", " "]
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },
@@ -119,4 +102,11 @@
         "tooltip": true
     },
 
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "$(pwd)/scripts/weather-stats/weather-stats",
+        "return-type": "json"
+    }
 }
