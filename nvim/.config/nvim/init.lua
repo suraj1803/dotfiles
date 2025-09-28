@@ -779,29 +779,22 @@ require('lazy').setup({
                 desc = '[F]ormat buffer',
             },
         },
+
         opts = {
             notify_on_error = false,
-            format_on_save = function(bufnr)
-                -- Disable "format_on_save lsp_fallback" for languages that don't
-                -- have a well standardized coding style. You can add additional
-                -- languages here or re-enable it for the disabled ones.
-                local disable_filetypes = { c = true, cpp = true }
-                if disable_filetypes[vim.bo[bufnr].filetype] then
-                    return nil
-                else
-                    return {
-                        timeout_ms = 500,
-                        lsp_format = 'fallback',
-                    }
-                end
-            end,
             formatters_by_ft = {
                 lua = { 'stylua' },
+
                 -- Conform can also run multiple formatters sequentially
-                -- python = { "isort", "black" },
+                python = { 'isort', 'black' },
                 --
                 -- You can use 'stop_after_first' to run the first available formatter from the list
-                -- javascript = { "prettierd", "prettier", stop_after_first = true },
+                javascript = { 'prettierd', 'prettier', stop_after_first = true },
+                rust = { 'rustfmt', lsp_format = 'fallback' },
+            },
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_fallback = true,
             },
         },
     },
@@ -825,25 +818,26 @@ require('lazy').setup({
         },
     },
 
-    { -- Autocompletion
+    {
         'saghen/blink.cmp',
-        event = 'VimEnter',
+        -- optional: provides snippets for the snippet source
+        dependencies = { 'rafamadriz/friendly-snippets' },
+
         version = '1.*',
-        dependencies = {
-            {
-                'L3MON4D3/LuaSnip',
-                version = '2.*',
-                build = (function()
-                    if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-                        return
-                    end
-                    return 'make install_jsregexp'
-                end)(),
-                opts = {},
-            },
-            'folke/lazydev.nvim',
-        },
+
         opts = {
+            -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+            -- 'super-tab' for mappings similar to vscode (tab to accept)
+            -- 'enter' for enter to accept
+            -- 'none' for no mappings
+            --
+            -- All presets have the following mappings:
+            -- C-space: Open menu or open docs if already open
+            -- C-n/C-p or Up/Down: Select next/previous item
+            -- C-e: Hide menu
+            -- C-k: Toggle signature help (if signature.enabled = true)
+            --
+            -- See :h blink-cmp-config-keymap for defining your own keymap
             keymap = {
                 -- Use <Enter> to accept completion/snippets
                 preset = 'none',
@@ -855,25 +849,28 @@ require('lazy').setup({
             },
 
             appearance = {
+                -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+                -- Adjusts spacing to ensure icons are aligned
                 nerd_font_variant = 'mono',
             },
 
-            completion = {
-                documentation = { auto_show = false, auto_show_delay_ms = 500 },
-            },
+            -- (Default) Only show the documentation popup when manually triggered
+            completion = { documentation = { auto_show = false } },
 
+            -- Default list of enabled providers defined so that you can extend it
+            -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
-                default = { 'lsp', 'path', 'snippets', 'lazydev' },
-                providers = {
-                    lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-                },
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
             },
 
-            snippets = { preset = 'luasnip' },
-
-            fuzzy = { implementation = 'lua' },
-            signature = { enabled = true },
+            -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
+            -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
+            -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
+            --
+            -- See the fuzzy documentation for more information
+            fuzzy = { implementation = 'prefer_rust_with_warning' },
         },
+        opts_extend = { 'sources.default' },
     },
     {
         'windwp/nvim-autopairs',
@@ -889,7 +886,15 @@ require('lazy').setup({
             'nvim-tree/nvim-web-devicons',
         },
         config = function()
-            require('nvim-tree').setup {}
+            require('nvim-tree').setup {
+                git = {
+                    enable = true,
+                    ignore = false,
+                },
+                filters = {
+                    dotfiles = false,
+                },
+            }
 
             vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' }) -- toggle file explorer
             vim.keymap.set('n', '<leader>ef', '<cmd>NvimTreeFindFileToggle<CR>', { desc = 'Toggle file explorer on current file' }) -- toggle file explorer on current file

@@ -1,9 +1,15 @@
-show=drun
-width=500
+[config]
 allow_images=true
-cache_file=/dev/null
+width=500
+show=drun
+prompt=Search
+height=400
+always_parse_args=true
+show_all=true
+term=ghostty
 hide_scroll=true
+print_command=true
 insensitive=true
-no_actions=true
-hide_search=false
-dynamic_lines=false
+columns=1
+
+# Same as the original source, no modifications made
