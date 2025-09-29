@@ -1,43 +1,21 @@
 * {
     font-family: CaskaydiaMono Nerd Font;
-    font-size: 13px;
-    padding-bottom: 0px;
+    font-size: 15px;
 }
 
 #waybar {
-    background: transparent;
+    /* background-color: rgba(0, 0, 0, 0); */
+    background: #0B151B;
     color: #c6d0f5;
-    margin: 0px 0px;
 }
 
-/* Workspaces */
-#workspaces {
-    border-radius: 10px;
-    margin: 4px 4px 2px 4px;
-    /* floating effect */
-    background: #101010;
-    padding: 2px 6px;
+#window {
+    min-width: 70px;
+    background: #4F739D;
+    margin-left: 10px;
+    padding: 0px 10px;
 }
 
-#workspaces button {
-    color: #babbf1;
-    border-radius: 8px;
-    padding: 4px 8px;
-    background: transparent;
-}
-
-#workspaces button.active {
-    color: #99d1db;
-}
-
-#workspaces button:hover {
-    color: #85c1dc;
-    border-radius: 8px;
-}
-
-/* Connected block modules */
-#custom-music,
-#backlight,
 #clock,
 #battery,
 #pulseaudio,
@@ -45,30 +23,9 @@
 #network,
 #cpu,
 #tray,
+#bluetooth,
 #memory {
-    background-color: #101010;
-    padding: 6px 12px;
-    margin: 4px 0px 2px 0px;
-    /* top + bottom margin = floating */
-}
-
-/* Left side rounded edges */
-#custom-music {
-    border-radius: 10px 0 0 10px;
-}
-
-
-
-/* Right side rounded edges */
-#clock {
-    border-radius: 10px;
-    color: #8caaee;
-    margin-left: 10px;
-}
-
-#tray {
-    margin: 4px 4px 2px 0px;
-    border-radius: 0px 10px 10px 0px;
+    padding: 0px 10px;
 }
 
 #battery {
@@ -80,22 +37,5 @@
 }
 
 #battery.warning:not(.charging) {
-    color: #e78284;
-}
-
-#backlight {
-    color: #e5c890;
-}
-
-#pulseaudio {
-    color: #ea999c;
-    border-radius: 10px 0px 0px 10px
-}
-
-#custom-lock {
-    color: #babbf1;
-}
-
-#custom-power {
     color: #e78284;
 }

@@ -2,25 +2,50 @@
     "layer": "top",
     "position": "top",
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
+
     ],
     "modules-center": ["clock"],
     "modules-right": [
+        "tray",
         "pulseaudio",
         "battery",
         "network",
         "cpu",
         "memory",
         "custom/lock",
-        "tray",
     ],
-    "hyprland/workspaces": {
-        "format": "{name}: {icon}",
-        "format-icons": {
-            "active": "",
-            "default": ""
-        }
+
+    "hyprland/window": {
+        "max-length": 25, // Characters count
+        "separate-outputs": true,
+        "icon": true
     },
+"hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
     "tray": {
         "icon-size": 18,
         "spacing": 10
@@ -31,6 +56,13 @@
         "format": "{:%A, %b %d - %I:%M %p}",
         "interval": 1
     },
+
+"bluetooth": {
+    "format": "",
+    "format-off": "󰂲" ,
+    "on-click": "blueberry",
+    "tooltip-format": "{status}"
+},
     "battery": {
         "format": "󰁹 {capacity}%",
         "format-charging": " {capacity}%",
