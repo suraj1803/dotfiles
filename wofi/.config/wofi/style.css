@@ -1,101 +1,91 @@
 @keyframes fadeIn {
-    0% {}
+  0% {}
 
-    100% {}
+  100% {}
 }
 
 * {
-    font-family: "CaskaydiaMono Nerd Font";
-    font-size: 18px;
-    outline: none;
-    border: none;
-    text-shadow: none;
-    background-color: rgba(25, 0, 46, 0.5);
-    background: transparent;
+  font-family: "CaskaydiaMono Nerd Font";
+  font-size: 18px;
+  outline: none;
+  border: none;
+  text-shadow: none;
+  background: none;
 }
 
 window {
-    all: unset;
-    padding: 20px;
-    border-radius: 0px;
-    background-color: rgba(25, 0, 46, 0.5);
+  all: unset;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #1a1b26;
+  /* TokyoNight background */
 }
 
 #inner-box {
-    margin: 2px;
-    padding: 5px;
-    border: none;
+  margin: 2px;
+  padding: 5px;
 }
 
 #outer-box {
-    border: none;
+  margin: 0;
 }
 
 #scroll {
-    margin: 0px;
-    border: none;
+  margin: 0px;
 }
 
 #input {
-    all: unset;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    padding: 20px;
-    border: none;
-    outline: none;
-    color: #00ffb7;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 10;
-    background-color: rgba(36, 0, 65, 0.5);
+  all: unset;
+  margin: 15px 20px;
+  padding: 10px;
+  color: #7aa2f7;
+  /* Blue accent */
+  border-radius: 6px;
+  background-color: #24283b;
+  /* Darker box */
 }
 
 #input image {
-    border: none;
-    color: #00ffb7;
+  color: #7aa2f7;
 }
 
 #input * {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 #input:focus {
-    outline: none;
-    border: none;
-    border-radius: 10;
+  outline: none;
+  border-radius: 6px;
+  background-color: #2f3549;
+  /* Slightly lighter focus */
 }
 
 #text {
-    margin: 5px;
-    border: none;
-    color: #ff0e82;
-    outline: none;
+  margin: 5px;
+  color: #c0caf5;
+  /* Normal text color */
 }
 
 #entry {
-    border: none;
-    margin: 5px;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #c0caf5;
 }
 
 #entry arrow {
-    border: none;
-    color: #00ffb7;
+  color: #7aa2f7;
+  /* Blue */
 }
 
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    border: none;
-    border-radius: 20px;
-    background-color: rgba(144, 0, 72, 0.5);
+  border-radius: 6px;
+  background-color: #414868;
+  /* Selection color */
 }
 
 #entry:selected #text {
-    color: #00ffb7;
+  color: #bb9af7;
+  /* Purple for selected text */
 }
-
-/*
-Changed the colors of the original source file and some margins/paddings
-Lastly modified on 17/8/2025 by Dimitrios Psaroudakis
-For the icons please find some that you like
-*/
