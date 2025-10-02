@@ -6,15 +6,14 @@
 }
 
 #waybar {
-    background: transparent;
-    color: #c6d0f5;
+    /* background: ; */
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
 #workspaces {
-    border-radius: 10px;
-    margin: 5px;
+    margin: 0px 5px;
     padding: 5px 10px;
-    background: #101010;
 }
 
 #workspaces button {
@@ -23,7 +22,7 @@
 
 
 button {
-    background: transparent;
+    color: #ffffff;
 }
 
 #workspaces button:hover {
@@ -41,9 +40,8 @@ button {
 #cpu,
 #memory,
 #custom-power {
-    background-color: #101010;
     padding: 5px 10px;
-    margin: 4px 0;
+    margin: 0px 0;
 }
 
 #window {
@@ -51,18 +49,14 @@ button {
     border-radius: 10px;
 }
 
-#pulseaudio {
-    border-radius: 10px 0px 0px 10px;
-}
+#pulseaudio {}
 
 #tray {
     margin-right: 5px;
-    border-radius: 0px 10px 10px 0px;
 }
 
 #clock {
-    color: #8caaee;
-    border-radius: 10px;
+    color: #ffffff;
 }
 
 #battery {
@@ -78,13 +72,11 @@ button {
 }
 
 #backlight {
-    color: #e5c890;
+  color: #ffffff;
 }
 
 #backlight,
-#battery {
-    border-radius: 0;
-}
+#battery {}
 
 
 #custom-lock {
@@ -93,6 +85,5 @@ button {
 
 #custom-power {
     margin-right: 5px;
-    border-radius: 0px 5px 5px 0px;
     color: #e78284;
 }
