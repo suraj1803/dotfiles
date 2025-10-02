@@ -1,6 +1,6 @@
 # TODO
-### lsp setup
-### autocompletion
-### Telescope
+## lsp setup
+## autocompletion
+## Telescope
 
 

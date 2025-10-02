@@ -1,7 +1,7 @@
 theme="iTerm2 Default"
 #background=#000000
 font-family="CaskaydiaMono Nerd Font Mono"
-font-size=15
+font-size=18
 maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
