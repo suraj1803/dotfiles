@@ -6,10 +6,10 @@ return {
   config = function()
     require("tokyonight").setup({
       transparent = true,
-      style = "storm",
+      style = "night",
       styles = {
         sidebars = "transparent", -- style for sidebars, see below
-        floats = "transparent", -- style for floating windows
+        floats = "transparent",   -- style for floating windows
       },
     })
 

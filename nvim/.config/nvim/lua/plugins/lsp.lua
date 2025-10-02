@@ -5,7 +5,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     -- import cmp-nvim-lsp plugin
@@ -59,23 +59,23 @@ return {
         -- opts.desc = "Restart LSP"
         -- keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-        if client:supports_method('textDocument/implementation') then
+        if client:supports_method("textDocument/implementation") then
           -- Create a keymap for vim.lsp.buf.implementation ...
         end
-        if not client:supports_method('textDocument/willSaveWaitUntil')
-          and client:supports_method('textDocument/formatting') then
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            group = vim.api.nvim_create_augroup('my.lsp', {clear=false}),
+        if
+            not client:supports_method("textDocument/willSaveWaitUntil")
+            and client:supports_method("textDocument/formatting")
+        then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
             buffer = ev.buf,
             callback = function()
               vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 1000 })
             end,
           })
         end
-
       end,
     })
-
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -95,18 +95,6 @@ return {
       capabilities = capabilities,
     })
 
-    vim.lsp.config("svelte", {
-      on_attach = function(client, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePost", {
-          pattern = { "*.js", "*.ts" },
-          callback = function(ctx)
-            -- Here use ctx.match instead of ctx.file
-            client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-          end,
-        })
-      end,
-    })
-
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
@@ -120,7 +108,7 @@ return {
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIMRUNTIME
+              vim.env.VIIIIIMRUNTIME
             }
           }
         },

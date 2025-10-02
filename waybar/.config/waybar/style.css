@@ -1,33 +1,46 @@
 * {
-    font-family: CaskaydiaMono Nerd Font;
-    font-size: 16px;
-    padding: 0px;
-    margin: 0px;
+  font-family: "SF Pro Display", "CaskaydiaMono Nerd Font", sans-serif;
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
 }
 
 #waybar {
-    /* background: ; */
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #ffffff;
+  background-color: rgba(28, 28, 30, 0.5);
+  /* dark translucent bar */
+  color: #ffffff;
+  /* light text */
+  padding: 4px 8px;
+  margin: 0px;
 }
 
 #workspaces {
-    margin: 0px 5px;
-    padding: 5px 10px;
+  margin: 0px 8px;
+  padding: 0px 6px;
 }
 
 #workspaces button {
-    padding: 0px 3px;
+  padding: 4px 10px;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 0px;
 }
 
-
-button {
-    color: #ffffff;
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.1);
+  /* subtle highlight */
+  color: #ffffff;
 }
 
 #workspaces button:hover {
-    background: #1e1e1e;
-    border: 0px solid transparent;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  color: #ffffff;
 }
 
 #tray,
@@ -40,50 +53,48 @@ button {
 #cpu,
 #memory,
 #custom-power {
-    padding: 5px 10px;
-    margin: 0px 0;
+  padding: 4px 10px;
+  margin: 0px 3px;
+  border-radius: 0px;
 }
 
 #window {
-    margin-left: 5px;
-    border-radius: 10px;
-}
-
-#pulseaudio {}
-
-#tray {
-    margin-right: 5px;
+  margin-left: 8px;
+  border-radius: 0px;
+  color: #ffffff;
 }
 
 #clock {
-    color: #ffffff;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 #battery {
-    color: #a6d189;
+  color: #27ae60;
+  /* green */
 }
 
 #battery.charging {
-    color: #a6d189;
+  color: #27ae60;
+  /* green */
 }
 
 #battery.warning:not(.charging) {
-    color: #e78284;
+  color: #e74c3c;
+  /* red */
 }
 
 #backlight {
   color: #ffffff;
 }
 
-#backlight,
-#battery {}
-
-
 #custom-lock {
-    color: #babbf1;
+  color: #0a84ff;
+  /* macOS blue accent */
 }
 
 #custom-power {
-    margin-right: 5px;
-    color: #e78284;
+  margin-right: 8px;
+  color: #e74c3c;
+  /* red */
 }
