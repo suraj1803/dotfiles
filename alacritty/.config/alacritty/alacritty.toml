@@ -2,12 +2,12 @@
 live_config_reload = true
 [window]
 dynamic_padding = true
-#opacity = 0.7
+opacity = 0.7
 #blur = true
 
 [font]
-normal = {family = 'JetBrainsMono Nerd Font'}
-size = 15
+normal = {family = 'CaskaydiaMono Nerd Font Mono'}
+size = 18
 
 [colors.primary]
 foreground = "#FFFFFF"

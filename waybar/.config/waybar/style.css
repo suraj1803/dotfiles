@@ -1,26 +1,26 @@
 * {
   font-family: "SF Pro Display", "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 13px;
+  font-size: 11px;
   padding: 0px;
   margin: 0px;
 }
 
 #waybar {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #1a1b26;
   /* dark translucent bar */
-  color: #ffffff;
+  color: #cdd6f4;
   /* light text */
-  padding: 4px 8px;
+  padding: 1px 2px;
   margin: 0px;
 }
 
 #workspaces {
-  margin: 0px 8px;
-  padding: 0px 6px;
+  margin: 0px 2px;
+  padding: 0px 2px;
 }
 
 #workspaces button {
-  padding: 4px 10px;
+  padding: 1px 2px;
   background: transparent;
   color: #ffffff;
   border-radius: 0px;
@@ -53,13 +53,13 @@ button {
 #cpu,
 #memory,
 #custom-power {
-  padding: 4px 10px;
+  padding: 2px 3px;
   margin: 0px 3px;
   border-radius: 0px;
 }
 
 #window {
-  margin-left: 8px;
+  margin-left: 4px;
   border-radius: 0px;
   color: #ffffff;
 }
@@ -94,7 +94,7 @@ button {
 }
 
 #custom-power {
-  margin-right: 8px;
+  margin-right: 4px;
   color: #e74c3c;
   /* red */
 }
