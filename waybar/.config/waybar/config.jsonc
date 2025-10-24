@@ -1,9 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["clock"],
 
-    "modules-center": ["clock" ],
+    "modules-center": ["hyprland/workspaces" ],
 
     "modules-right": [
         "pulseaudio",

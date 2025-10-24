@@ -5,7 +5,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim",                   opts = {} },
+    { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     -- import cmp-nvim-lsp plugin
@@ -27,7 +27,7 @@ return {
         keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
         --
         -- opts.desc = "Show LSP definitions"
-        keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+        keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts) -- show lsp definitions
         --
         -- opts.desc = "Show LSP implementations"
         -- keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
@@ -63,8 +63,8 @@ return {
           -- Create a keymap for vim.lsp.buf.implementation ...
         end
         if
-            not client:supports_method("textDocument/willSaveWaitUntil")
-            and client:supports_method("textDocument/formatting")
+          not client:supports_method("textDocument/willSaveWaitUntil")
+          and client:supports_method("textDocument/formatting")
         then
           vim.api.nvim_create_autocmd("BufWritePre", {
             group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
@@ -108,9 +108,9 @@ return {
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIIIIIMRUNTIME
-            }
-          }
+              vim.env.VIIIIIIUNTIME
+              }
+           }
         },
       },
     })
