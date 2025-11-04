@@ -9,7 +9,7 @@ return {
       style = "night",
       styles = {
         sidebars = "transparent", -- style for sidebars, see below
-        floats = "transparent",   -- style for floating windows
+        floats = "transparent", -- style for floating windows
       },
     })
 
