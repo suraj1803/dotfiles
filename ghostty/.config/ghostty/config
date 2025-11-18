@@ -1,14 +1,14 @@
-theme="iTerm2 Default"
-#background=#000000
+theme="Adwaita Dark"
+background=#000000
 font-family="CaskaydiaMono Nerd Font Mono"
-font-size=20
+font-size=21
 #maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=true
 background-opacity=0.7
 window-decoration=none
 #gtk-titlebar=false
-# window-padding-x = 5
+# window-padding-x = 1
 # window-padding-y = 0
 
 # keybindings
