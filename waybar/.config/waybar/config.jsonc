@@ -4,7 +4,7 @@
 
   "modules-left": ["custom/arch","hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["battery","pulseaudio", "tray"],
+  "modules-right": ["battery", "pulseaudio", "cpu", "tray"],
 
   "hyprland/window": {
     "max-length": 50
@@ -47,6 +47,11 @@
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"]
-  }
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
 
 }
