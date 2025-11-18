@@ -8,19 +8,19 @@
 
 window#waybar {
   background: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(120, 120, 140, 0.3);
+  /* border-bottom: 1px solid rgba(120, 120, 140, 0.3); */
   color: #e5e5e5;
 }
 
 #workspaces button {
-  padding: 0px 3px;
+  padding: 0px 1px;
   border-radius: 0px;
   color: #d8d8d8;
 }
 
 #workspaces button.active {
   background: rgba(170, 216, 255, 0.25);
-  /* matches your active border theme */
+  border-bottom: 2px solid rgba(150, 150, 200, 0.7);
   color: #ffffff;
 }
 
@@ -44,4 +44,5 @@ window#waybar .modules-right {
 
 #custom-arch {
   margin-right: 5px;
+  font-size: 1rem;
 }
