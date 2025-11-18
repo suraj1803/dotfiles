@@ -1,0 +1,47 @@
+* {
+  border: none;
+  padding: 0;
+  font-family: "CaskaydiaMono Nerd Font", sans-serif;
+  font-size: 0.8rem;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(120, 120, 140, 0.3);
+  color: #e5e5e5;
+}
+
+#workspaces button {
+  padding: 0px 3px;
+  border-radius: 0px;
+  color: #d8d8d8;
+}
+
+#workspaces button.active {
+  background: rgba(170, 216, 255, 0.25);
+  /* matches your active border theme */
+  color: #ffffff;
+}
+
+#tray {
+  padding: 0px 0px;
+  padding-left: 5px;
+}
+
+window#waybar .modules-left {
+  padding-left: 7px;
+}
+
+window#waybar .modules-right {
+  padding: 3px 5px;
+}
+
+#pulseaudio,
+#battery {
+  padding: 0px 8px;
+}
+
+#custom-arch {
+  margin-right: 5px;
+}

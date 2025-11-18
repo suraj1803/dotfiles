@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:CaskaydiaMono Nerd Font 9
+font pango:CaskaydiaMono Nerd Font 8
 
 exec --no-startup-id dex --autostart --environment i3
 
@@ -42,8 +42,8 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
-# bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+d exec --no-startup-id vicinae toggle
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+# bindsym $mod+d exec --no-startup-id vicinae toggle
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -159,13 +159,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status -c  ~/.config/i3/i3status.conf
-    font pango:CaskaydiaMono Nerd Font 9
+    font pango:CaskaydiaMono Nerd Font 7
 }
 
 bindsym $mod+Shift+s exec flameshot gui
 
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom --config ~/.config/picom/picom.conf 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec vicinae server
+exec_always --no-startup-id feh --bg-scale ~/Pictures/daniel-leone-g30P1zcOzXo-unsplash-new.jpg
+
+#exec vicinae server
 # exec --no-startup-id picom --experimental-backends
