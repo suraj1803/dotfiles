@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # -------------------------------
 #   ARCH LINUX POST-INSTALL SETUP
@@ -22,7 +22,15 @@ sudo pacman -S --noconfirm --needed \
     npm \
     ripgrep \
     zsh \
-    stow
+    stow \
+    ghostty \
+    kitty \
+    hyprland \
+    waybar \
+    hyprpaper \
+    hyprlock \
+    hyprshot
+
 
 # Audio
 sudo pacman -S --noconfirm --needed \
@@ -70,6 +78,8 @@ if ! command -v yay &>/dev/null; then
     cd "$HOME"
 fi
 
+yay -S --noconfirm --needed vicinae-bin 
+
 # --------------------------------------------------------------------
 # OH MY ZSH + POWERLEVEL10K
 # --------------------------------------------------------------------
@@ -80,9 +90,6 @@ export CHSH=no     # prevent installer from running chsh itself
 echo "Installing Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Set default shell
-echo "Changing default shell to zsh..."
-chsh -s "$(which zsh)" "$USER"
 
 # Install Powerlevel10k Theme
 echo "Installing Powerlevel10k..."
@@ -93,10 +100,15 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
 # DOTFILES
 # --------------------------------------------------------------------
 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 cd "$HOME"
+rm .zshrc
+rm .p10k.zsh
 git clone https://github.com/suraj1803/dotfiles.git
 cd dotfiles
-stow hypr waybar hyprlock ghostty kitty nvim tmux
+stow hypr waybar hyprlock ghostty kitty nvim tmux zsh
 cd "$HOME"
 
 # TMUX TPM

@@ -2,13 +2,12 @@
   border: none;
   padding: 0;
   font-family: "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.5);
-  /* border-bottom: 1px solid rgba(120, 120, 140, 0.3); */
+  background: rgba(0, 0, 0, 0.8);
   color: #e5e5e5;
 }
 
