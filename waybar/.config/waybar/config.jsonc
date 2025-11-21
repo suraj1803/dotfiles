@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "bottom",
 
-  "modules-left": ["custom/arch","hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["battery", "pulseaudio", "cpu", "tray"],
 

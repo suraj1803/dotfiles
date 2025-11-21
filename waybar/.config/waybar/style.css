@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   color: #c0caf5;
 }
 
@@ -23,7 +23,7 @@ window#waybar {
 }
 
 window#waybar .modules-left {
-  padding-left: 5px;
+  /* padding-left: 5px; */
 }
 
 window#waybar .modules-right {
@@ -35,9 +35,5 @@ window#waybar .modules-right {
 #battery,
 #cpu,
 #tray {
-  margin-left: 1.2rem;
-}
-
-#custom-arch {
-  /* margin-right: px; */
+  margin-left: 1rem;
 }
