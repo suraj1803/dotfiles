@@ -2,17 +2,17 @@
   border: none;
   padding: 0;
   font-family: "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 0.7rem;
+  font-size: 10px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.6);
   color: #c0caf5;
 }
 
 #workspaces button {
-  padding: 0px;
+  padding: 2px 2px;
   border-radius: 0px;
   color: #c0caf5;
 }
@@ -27,13 +27,18 @@ window#waybar .modules-left {
 }
 
 window#waybar .modules-right {
-  padding: 3px 0px;
+  padding: 2px 0px;
   padding-right: 5px;
 }
 
 #pulseaudio,
 #battery,
+#clock,
 #cpu,
 #tray {
-  margin-left: 1rem;
+  margin-left: 1.2rem;
+}
+
+#window {
+  padding-left: 10px;
 }

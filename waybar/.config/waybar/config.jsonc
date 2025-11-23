@@ -1,10 +1,10 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["battery", "pulseaudio", "cpu", "tray"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": [],
+  "modules-right": ["battery", "pulseaudio", "cpu","clock", "tray"],
 
   "hyprland/window": {
     "max-length": 50
@@ -16,7 +16,7 @@
   },
 
   "tray": {
-    "icon-size": 12,
+    "icon-size": 13,
     "spacing": 10,
   },
 

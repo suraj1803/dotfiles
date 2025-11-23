@@ -165,15 +165,14 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status -c  ~/.config/i3/i3status.conf
-    font pango:CaskaydiaMono Nerd Font 7
 }
 
 bindsym $mod+Shift+s exec flameshot gui
 
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id picom --config ~/.config/picom/picom.conf 
+exec --no-startup-id picom --experimental-backends  --config ~/.config/picom/picom.conf
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id feh --bg-scale ~/Pictures/5818651.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/dark_abstract_background_neon_blue-wallpaper-3840x2160.jpg
 
 exec vicinae server
 # exec --no-startup-id picom --experimental-backends
