@@ -4,10 +4,10 @@
 
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
-  "modules-right": ["battery", "pulseaudio", "cpu","clock", "tray"],
+  "modules-right": ["clock", "pulseaudio", "cpu","battery", "tray"],
 
   "hyprland/window": {
-    "max-length": 50
+    "max-length": 75
   },
 
   "battery": {
@@ -49,9 +49,9 @@
     "ignored-sinks": ["Easy Effects Sink"]
   },
   "cpu": {
-    "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-  },
+    "interval": 2,
+    "format": " {}%",
+    "max-length": 10
+  }
 
 }

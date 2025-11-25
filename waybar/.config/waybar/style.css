@@ -2,12 +2,12 @@
   border: none;
   padding: 0;
   font-family: "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   color: #c0caf5;
 }
 
@@ -27,7 +27,7 @@ window#waybar .modules-left {
 }
 
 window#waybar .modules-right {
-  padding: 2px 0px;
+  padding: 3px 0px;
   padding-right: 5px;
 }
 
@@ -41,4 +41,5 @@ window#waybar .modules-right {
 
 #window {
   padding-left: 10px;
+  font-size: 18px;
 }

@@ -9,13 +9,18 @@ set -e
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
 
+# useful for dual boot
 timedatectl set-local-rtc 1
 
-# Base essentials
+# essentials
 sudo pacman -S --noconfirm --needed \
     network-manager-applet \
     tmux \
     git \
+    xdg-desktop-portal \
+    xdg-desktop-portal-hyprland \
+    pipewire \ 
+    pavucontrol \
     vim \
     nvim \
     nodejs \
@@ -29,16 +34,12 @@ sudo pacman -S --noconfirm --needed \
     waybar \
     hyprpaper \
     hyprlock \
-    hyprshot
+    hyprshot \
+    pipewire-pulse \
+    wlroots \
 
 
 # Audio
-sudo pacman -S --noconfirm --needed \
-  pipewire \
-  pipewire-pulse \
-  wlroots \
-  xdg-desktop-portal \
-  xdg-desktop-portal-hyprland
 
 # Fonts
 sudo pacman -S --noconfirm --needed \
@@ -46,6 +47,8 @@ sudo pacman -S --noconfirm --needed \
     ttf-liberation \
     noto-fonts \
     noto-fonts-emoji \
+    noto-fonts-cjk \
+    noto-fonts-extra \
     ttf-jetbrains-mono \
     ttf-cascadia-mono-nerd
 

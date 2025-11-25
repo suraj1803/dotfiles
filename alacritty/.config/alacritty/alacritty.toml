@@ -2,12 +2,12 @@
 live_config_reload = true
 [window]
 dynamic_padding = true
-#opacity = 0.7
-#blur = true
+# opacity = 0.8
+# blur = false
 
 [font]
 normal = {family = 'CaskaydiaMono Nerd Font Mono'}
-size = 18
+size = 20
 
 [cursor]
 style = {shape = "Block", blinking = "Off"}

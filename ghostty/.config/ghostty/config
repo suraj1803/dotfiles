@@ -1,12 +1,12 @@
 theme="Adwaita Dark"
 background=#000000
 font-family="CaskaydiaMono Nerd Font Mono"
-font-size=22
+font-size=20
 #maximize=true
 shell-integration-features=no-cursor 
-window-padding-balance=true
-background-opacity=0.85
-window-decoration=none
+window-padding-balance=false
+# background-opacity=0.85
+# window-decoration=none
 #gtk-titlebar=false
 # window-padding-x = 1
 # window-padding-y = 0
