@@ -2,7 +2,11 @@ set $mod Mod4
 font pango:CaskaydiaMono Nerd Font 8
 
 exec --no-startup-id dex --autostart --environment i3
+gaps inner 2px
 
+# Configure an additional 5px of extra space to the screen edges,
+# for a total gap of 10px to the screen edges, and 5px between windows.
+gaps outer 2px
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -163,16 +167,16 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  status_command i3status -c  ~/.config/i3/i3status.conf
-}
+# bar {
+#   status_command i3status -c  ~/.config/i3/i3status.conf
+# }
 
 bindsym $mod+Shift+s exec flameshot gui
 
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom --experimental-backends  --config ~/.config/picom/picom.conf
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id feh --bg-scale ~/Pictures/dark_abstract_background_neon_blue-wallpaper-3840x2160.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/miles-morales-spider-man-web-swing-4k-wallpaper-uhdpaper.com-604@0@j.jpg
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec vicinae server
-# exec --no-startup-id picom --experimental-backends

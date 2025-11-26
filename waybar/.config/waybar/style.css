@@ -2,7 +2,7 @@
   border: none;
   padding: 0;
   font-family: "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -12,7 +12,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 2px 2px;
+  padding: 0px 4px;
   border-radius: 0px;
   color: #c0caf5;
 }
@@ -36,10 +36,9 @@ window#waybar .modules-right {
 #clock,
 #cpu,
 #tray {
-  margin-left: 1.2rem;
+  margin-left: 1.4rem;
 }
 
 #window {
   padding-left: 10px;
-  font-size: 18px;
 }
