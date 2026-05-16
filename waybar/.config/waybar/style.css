@@ -2,13 +2,13 @@
   border: none;
   padding: 0;
   font-family: "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.8);
-  color: #c0caf5;
+  background: rgba(0, 0, 0, 1);
+  color: #ffffff;
 }
 
 #workspaces button {
@@ -27,7 +27,7 @@ window#waybar .modules-left {
 }
 
 window#waybar .modules-right {
-  padding: 3px 0px;
+  padding: 1px 0px;
   padding-right: 5px;
 }
 

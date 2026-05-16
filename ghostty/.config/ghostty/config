@@ -1,7 +1,7 @@
 theme="Adwaita Dark"
 background=#000000
-font-family="CaskaydiaMono Nerd Font Mono"
-font-size=20
+font-family="CaskaydiaMono Nerd Font "
+font-size=16
 #maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=false
