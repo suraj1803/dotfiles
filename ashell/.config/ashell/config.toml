@@ -2,7 +2,7 @@ position = "Bottom"
 [appearance]
 style = "Solid"
 font_name = "Caskaydia Nerd Font"
-scale_factor = 0.85
+scale_factor = 0.9
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
 text_color = "#a9b1d6"
