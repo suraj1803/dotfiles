@@ -1,7 +1,8 @@
 theme="Adwaita Dark"
+# theme = "Gruvbox Dark Hard"
 background=#000000
 font-family="CaskaydiaMono Nerd Font "
-font-size=16
+font-size=20
 #maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=false

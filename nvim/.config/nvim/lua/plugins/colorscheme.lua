@@ -24,20 +24,19 @@ return {
 			no_italic = false, -- Force no italic
 			no_bold = false, -- Force no bold
 			no_underline = false, -- Force no underline
-			styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-				comments = { "italic" }, -- Change the style of comments
-				conditionals = { "italic" },
-				loops = {},
-				functions = {},
-				keywords = {},
-				strings = {},
+			styles = {
+				comments = { "italic" },
+				conditionals = { "italic", "bold" },
+				loops = { "italic" },
+				functions = { "bold" },
+				keywords = { "bold" },
+				strings = { "italic" },
 				variables = {},
-				numbers = {},
-				booleans = {},
+				numbers = { "bold" },
+				booleans = { "bold", "italic" },
 				properties = {},
-				types = {},
+				types = { "bold" },
 				operators = {},
-				-- miscs = {}, -- Uncomment to turn off hard-coded styles
 			},
 			lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
 				virtual_text = {
@@ -79,3 +78,35 @@ return {
 		vim.cmd.colorscheme("catppuccin")
 	end,
 }
+
+-- return {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		-- Default options:
+-- 		require("gruvbox").setup({
+-- 			terminal_colors = true, -- add neovim terminal colors
+-- 			undercurl = true,
+-- 			underline = true,
+-- 			bold = true,
+-- 			italic = {
+-- 				strings = true,
+-- 				emphasis = true,
+-- 				comments = true,
+-- 				operators = false,
+-- 				folds = true,
+-- 			},
+-- 			strikethrough = true,
+-- 			invert_selection = false,
+-- 			invert_signs = false,
+-- 			invert_tabline = false,
+-- 			inverse = true, -- invert background for search, diffs, statuslines and errors
+-- 			contrast = "", -- can be "hard", "soft" or empty string
+-- 			palette_overrides = {},
+-- 			overrides = {},
+-- 			dim_inactive = false,
+-- 			transparent_mode = true,
+-- 		})
+-- 		vim.cmd("colorscheme gruvbox")
+-- 	end,
+-- }
