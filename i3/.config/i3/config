@@ -1,7 +1,7 @@
 set $mod Mod4
 font pango:CaskaydiaMono Nerd Font 8
 
-exec --no-startup-id dex --autostart --environment i3
+# exec --no-startup-id dex --autostart --environment i3
 gaps inner 2px
 
 # Configure an additional 5px of extra space to the screen edges,
