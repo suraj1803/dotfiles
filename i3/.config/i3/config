@@ -1,12 +1,12 @@
 set $mod Mod4
-font pango:CaskaydiaMono Nerd Font 8
+font pango:Monospace 8
 
 # exec --no-startup-id dex --autostart --environment i3
-gaps inner 2px
+# gaps inner 2px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
-gaps outer 2px
+# gaps outer 2px
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -51,9 +51,10 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
+bindsym $mod+space exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+space exec --no-startup-id vicinae toggle
+# bindsym $mod+space exec --no-startup-id vicinae toggle
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -171,12 +172,12 @@ bindsym $mod+r mode "resize"
 #   status_command i3status -c  ~/.config/i3/i3status.conf
 # }
 
-bindsym $mod+Shift+s exec flameshot gui
+# bindsym $mod+Shift+s exec flameshot gui
 
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom --experimental-backends  --config ~/.config/picom/picom.conf
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id feh --bg-scale ~/Pictures/miles-morales-spider-man-web-swing-4k-wallpaper-uhdpaper.com-604@0@j.jpg
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/miles-morales-spider-man-web-swing-4k-wallpaper-uhdpaper.com-604@0@j.jpg
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec vicinae server
+# exec vicinae server
