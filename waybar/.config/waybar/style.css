@@ -1,44 +1,82 @@
+/* ~/.config/waybar/style.css */
+
 * {
   border: none;
-  padding: 0;
-  font-family: "CaskaydiaMono Nerd Font", sans-serif;
-  font-size: 10px;
+  /* border-radius: 8px; */
+  font-family: "CaskaydiaMono Nerd Font", monospace;
+  font-size: 12px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 1);
-  color: #ffffff;
+  background: rgba(30, 30, 46, 0.8);
+  color: #cdd6f4;
+
+  /* border-bottom: 2px solid rgba(205, 214, 244, 0.25); */
 }
 
+/* Workspaces container */
+#workspaces {
+  margin: 0px 0px;
+  padding: 0px 2px;
+  /* background: #181825; */
+  /* border-radius: 10px; */
+}
+
+/* Workspace buttons */
 #workspaces button {
-  padding: 0px 4px;
+  padding: 0 3px;
+  margin: 0px 0px;
+  color: #a6adc8;
+  background: transparent;
   border-radius: 0px;
-  color: #c0caf5;
 }
 
 #workspaces button.active {
-  background: rgba(170, 216, 255, 0.25);
-  color: #c0caf5;
+  background: #89b4fa;
+  color: #1e1e2e;
 }
 
-window#waybar .modules-left {
-  /* padding-left: 5px; */
-}
+/* #workspaces button:hover { */
+/*   background: #313244; */
+/*   color: #cdd6f4; */
+/* } */
 
-window#waybar .modules-right {
-  padding: 1px 0px;
-  padding-right: 5px;
-}
+/* Window title */
 
-#pulseaudio,
+/* Right modules */
+#window,
 #battery,
+#pulseaudio,
 #clock,
-#cpu,
 #tray {
-  margin-left: 1.4rem;
+  margin: 0px 0px;
+  padding: 0px 10px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  font-weight: 600;
 }
 
 #window {
-  padding-left: 10px;
+  font-weight: 500;
+  font-weight: normal;
+}
+
+/* Battery */
+#battery.charging {
+  color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+  color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+  color: #f38ba8;
+}
+
+/* Clock */
+#clock {
+  color: #89b4fa;
+  /* font-weight: 600; */
 }

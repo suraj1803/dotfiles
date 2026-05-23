@@ -45,6 +45,7 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd(terminal)
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("dunst")
 	hl.exec_cmd("waybar")
@@ -63,6 +64,8 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 
 -- qt specific variables
 hl.env("QT_QPA_PLATFORM", "wayland")
@@ -76,8 +79,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("XDG_ACTIVATION_TOKEN", "")
 hl.env("GTK_USE_PORTAL", "1")
 -----------------------
------ PERMISSIONS -----
------------------------
+----- PERMISSIONS ----- --------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
 --
@@ -129,14 +131,14 @@ hl.config({
 		inactive_opacity = 1.0,
 
 		shadow = {
-			enabled = true,
+			enabled = false,
 			range = 4,
 			render_power = 3,
 			color = 0xee1a1a1a,
 		},
 
 		blur = {
-			enabled = true,
+			enabled = false,
 			size = 3,
 			passes = 1,
 			vibrancy = 0.1696,
@@ -277,8 +279,11 @@ hl.bind(
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard"))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus with mainMod + arrow keys
@@ -296,8 +301,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
