@@ -68,7 +68,8 @@ hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 
 -- qt specific variables
-hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
@@ -103,7 +104,7 @@ hl.env("GTK_USE_PORTAL", "1")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 5,
+		gaps_in = 2,
 		gaps_out = 5,
 
 		border_size = 1,
@@ -138,7 +139,7 @@ hl.config({
 		},
 
 		blur = {
-			enabled = false,
+			enabled = true,
 			size = 3,
 			passes = 1,
 			vibrancy = 0.1696,
@@ -279,7 +280,7 @@ hl.bind(
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -400,9 +401,19 @@ hl.layer_rule({
 	ignore_alpha = 0,
 })
 
--- disable animation for vicinae only
-hl.layer_rule({
-	match = { namespace = "vicinae" },
-	name = "vicinae-no-animation",
-	no_anim = true,
+-- -- disable animation for vicinae only
+-- hl.layer_rule({
+-- 	match = { namespace = "vicinae" },
+-- 	name = "vicinae-no-animation",
+-- 	no_anim = true,
+-- })
+
+hl.window_rule({
+	match = {
+		float = true,
+	},
+
+	border_size = 0,
+	rounding = 8,
+	rounding_power = 5,
 })
