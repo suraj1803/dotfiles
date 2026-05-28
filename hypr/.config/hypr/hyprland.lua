@@ -27,10 +27,9 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "kitty"
-local fileManager = "thunar"
+local fileManager = "dolphin"
 -- local menu = "hyprlauncher"
 local menu = "wofi --show drun"
--- local menu = "vicinae toggle"
 
 -------------------
 ---- AUTOSTART ----
@@ -42,16 +41,10 @@ local menu = "wofi --show drun"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	-- hl.exec_cmd(terminal)
-	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("nm-applet")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	hl.exec_cmd("waybar & hyprpaper")
 	hl.exec_cmd("dunst")
-	hl.exec_cmd("waybar")
-	hl.exec_cmd("hyprpaper")
-	-- hl.exec_cmd("vicinae server")
-	-- hl.exec_cmd("~/.config/hypr/scripts/start.sh")
 end)
 
 -------------------------------
@@ -61,29 +54,22 @@ end)
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-
--- qt specific variables
-hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("GDK_BACKEND", "wayland,x11,*")
-hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("SDL_VIDEODRIVER", "wayland")
 
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
-
-hl.env("XDG_ACTIVATION_TOKEN", "")
-hl.env("GTK_USE_PORTAL", "1")
 -----------------------
------ PERMISSIONS ----- --------------------
+----- PERMISSIONS -----
+-----------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
---
 -- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
 -- for security reasons
 
@@ -104,14 +90,21 @@ hl.env("GTK_USE_PORTAL", "1")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 0,
-		gaps_out = 0,
+		gaps_in = 5,
+		gaps_out = 5,
 
 		border_size = 1,
 
 		col = {
-			active_border = "rgba(7dcfffaa)",
-			inactive_border = "rgba(595959aa)",
+			active_border = {
+				colors = {
+					"rgba(7aa2f7ee)",
+					"rgba(bb9af7ee)",
+				},
+				angle = 45,
+			},
+
+			inactive_border = "rgba(414868aa)",
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -132,7 +125,7 @@ hl.config({
 		inactive_opacity = 1.0,
 
 		shadow = {
-			enabled = false,
+			enabled = true,
 			range = 4,
 			render_power = 3,
 			color = 0xee1a1a1a,
@@ -147,7 +140,7 @@ hl.config({
 	},
 
 	animations = {
-		enabled = false,
+		enabled = true,
 	},
 })
 
@@ -224,9 +217,8 @@ hl.config({
 
 hl.config({
 	misc = {
-		force_default_wallpaper = 0, -- Set to 0 or 1 to disable the anime mascot wallpapers
-		disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
-		initial_workspace_tracking = 1,
+		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
+		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
 	},
 })
 
@@ -241,6 +233,8 @@ hl.config({
 		kb_model = "",
 		kb_options = "",
 		kb_rules = "",
+		repeat_rate = 35,
+		repeat_delay = 200,
 
 		follow_mouse = 1,
 
@@ -273,20 +267,20 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+-- closeWindowBind:set_enabled(false)
 hl.bind(
 	mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+-- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill waybar ; waybar &"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("killall waybar || waybar"))
+hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard"))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit")) -- dwindle only
+-- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -303,8 +297,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
--- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
--- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -392,29 +386,4 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
-})
-
--- blur
--- hl.layer_rule({
--- 	match = { namespace = "vicinae" },
--- 	name = "vicinae-blur",
--- 	blur = true,
--- 	ignore_alpha = 0,
--- })
-
--- -- disable animation for vicinae only
--- hl.layer_rule({
--- 	match = { namespace = "vicinae" },
--- 	name = "vicinae-no-animation",
--- 	no_anim = true,
--- })
-
-hl.window_rule({
-	match = {
-		float = true,
-	},
-
-	border_size = 0,
-	rounding = 8,
-	rounding_power = 5,
 })

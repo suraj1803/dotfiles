@@ -1,34 +1,111 @@
+// -*- mode: jsonc -*-
 {
-  "layer": "top",
-  "position" : "bottom",
+  "layer": "top", 
+  "position": "top", 
+  "height": 30, 
+  "spacing": 4, 
   "reload_style_on_change" : true,
-  "modules-left": ["hyprland/workspaces" ],
-  // "modules-center": [""],
-  "modules-right": ["clock", "battery","pulseaudio", "tray"],
-  "hyprland/window": {
-    "max-length": 50
-  },
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""]
-  },
-  "clock": {
-    "format": "{:%A, %d %b %H:%M}"
-  },
-  "tray": {
-    "icon-size": 15,
-    "spacing": 10
-  },
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "󰖁 ",
-    "format-icons": {
-      "default": ["  ", " "]
+
+    // Choose the order of the modules
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window",
+    ],
+    "modules-center": [
+    ],
+
+    "modules-right": [
+      "network",
+      "custom/sep",
+      "battery",
+      "custom/sep",
+      "cpu",
+      "custom/sep",
+      "memory",
+      "custom/sep",
+      "disk",
+      "custom/sep",
+      "clock",
+      "custom/sep",
+      "pulseaudio",
+      "custom/sep",
+      "tray"
+    ],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{name}",
+      "persistent-workspaces": {
+        "*" : 6
+      }
     },
-    "scroll-step": 1,
-    "on-click": "pavucontrol",
-    "ignored-sinks": ["Easy Effects Sink"]
-  }
+    "hyprland/window" : {
+      "max-length": 40,
+      "seperate-outputs": false
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+      "format-alt": "{:%Y-%m-%d %I:%M %p}",
+      "format": "{:%A, %d %B %Y, %I:%M %p}"
+    },
+    "cpu": {
+      "format": " : {usage}%",
+      "tooltip":  false
+    },
+    "memory": {
+      "format": ": {used}G"
+    },
+    "disk": {
+      "interval": 60,
+      "path": "/",
+      "format": "Disk: {free}"
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "Bat: {capacity}% {icon} {time}",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "Bat {capacity}%",
+      "format-time": "{H}:{M}",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "format-linked": "{ifname} (No IP) 󰊗",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/sep": {
+      "format" : "|",
+      "interval" : 0
+    },
+
+    "pulseaudio": {
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% {icon}",
+      "format-muted": "󰖁 ",
+      "format-icons": {
+        "default": ["  ", " "]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+      "ignored-sinks": ["Easy Effects Sink"]
+    }
 
 }
