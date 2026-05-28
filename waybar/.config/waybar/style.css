@@ -2,31 +2,31 @@
 
 * {
   border: none;
-  /* border-radius: 8px; */
   font-family: "CaskaydiaMono Nerd Font", monospace;
-  font-size: 12px;
+  font-size: 10px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(30, 30, 46, 0.8);
-  color: #cdd6f4;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
 
-  /* border-bottom: 2px solid rgba(205, 214, 244, 0.25); */
+  /* border-top: 2px solid rgba(255, 255, 255, 0.5); */
 }
 
 /* Workspaces container */
 #workspaces {
   margin: 0px 0px;
-  padding: 0px 2px;
+  padding: 0px 0px;
   /* background: #181825; */
   /* border-radius: 10px; */
 }
 
 /* Workspace buttons */
 #workspaces button {
-  padding: 0 3px;
+  padding: 0 0px;
   margin: 0px 0px;
+  margin-right: 2px;
   color: #a6adc8;
   background: transparent;
   border-radius: 0px;
@@ -37,29 +37,18 @@ window#waybar {
   color: #1e1e2e;
 }
 
-/* #workspaces button:hover { */
-/*   background: #313244; */
-/*   color: #cdd6f4; */
-/* } */
-
-/* Window title */
-
 /* Right modules */
 #window,
 #battery,
 #pulseaudio,
 #clock,
 #tray {
-  margin: 0px 0px;
-  padding: 0px 10px;
-  padding-top: 1px;
-  padding-bottom: 3px;
+  padding: 0 8px;
   font-weight: 600;
 }
 
 #window {
   font-weight: 500;
-  font-weight: normal;
 }
 
 /* Battery */
@@ -78,5 +67,14 @@ window#waybar {
 /* Clock */
 #clock {
   color: #89b4fa;
-  /* font-weight: 600; */
+}
+
+#tray menu * {
+  font-size: 13px;
+  margin: 1px;
+}
+/* Tray */
+#tray {
+  padding: 0 6px;
+  margin: 0px 0px 2px 0px;
 }

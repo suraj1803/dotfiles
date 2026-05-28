@@ -50,7 +50,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dunst")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
-	hl.exec_cmd("vicinae server")
+	-- hl.exec_cmd("vicinae server")
 	-- hl.exec_cmd("~/.config/hypr/scripts/start.sh")
 end)
 
@@ -104,13 +104,13 @@ hl.env("GTK_USE_PORTAL", "1")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 2,
-		gaps_out = 5,
+		gaps_in = 0,
+		gaps_out = 0,
 
 		border_size = 1,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			active_border = "rgba(7dcfffaa)",
 			inactive_border = "rgba(595959aa)",
 		},
 
@@ -147,7 +147,7 @@ hl.config({
 	},
 
 	animations = {
-		enabled = true,
+		enabled = false,
 	},
 })
 
@@ -283,6 +283,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard"))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -394,12 +395,12 @@ hl.window_rule({
 })
 
 -- blur
-hl.layer_rule({
-	match = { namespace = "vicinae" },
-	name = "vicinae-blur",
-	blur = true,
-	ignore_alpha = 0,
-})
+-- hl.layer_rule({
+-- 	match = { namespace = "vicinae" },
+-- 	name = "vicinae-blur",
+-- 	blur = true,
+-- 	ignore_alpha = 0,
+-- })
 
 -- -- disable animation for vicinae only
 -- hl.layer_rule({
