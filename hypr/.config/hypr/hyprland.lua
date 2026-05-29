@@ -18,7 +18,7 @@ hl.monitor({
 	output = "eDP-1",
 	mode = "1920x1080@120",
 	position = "0x0",
-	scale = "1",
+	scale = "1.2",
 })
 
 ---------------------
@@ -52,7 +52,12 @@ end)
 -------------------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
+--
+hl.config({
+	xwayland = {
+		force_zero_scaling = true,
+	},
+})
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
@@ -61,17 +66,18 @@ hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("GDK_SCALE", "1.25")
 
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- nvidia
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("GBM_BACKEND", "nvidia-drm")
-hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
-hl.env("WLR_DRM_DEVICES", "/dev/dri/card1")
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia")
+-- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+-- hl.env("GBM_BACKEND", "nvidia-drm")
+-- hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
+-- hl.env("WLR_DRM_DEVICES", "/dev/dri/card1")
 
 -- Optional
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
@@ -100,8 +106,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 5,
-		gaps_out = 5,
+		gaps_in = 0,
+		gaps_out = 0,
 
 		border_size = 1,
 
