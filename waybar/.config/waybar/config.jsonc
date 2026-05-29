@@ -9,6 +9,7 @@
     // Choose the order of the modules
     "modules-left": [
       "hyprland/workspaces",
+      "custom/sep",
       "hyprland/window",
     ],
     "modules-center": [
