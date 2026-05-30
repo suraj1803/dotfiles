@@ -16,6 +16,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("waybar & hyprpaper")
 	hl.exec_cmd("dunst")
+	-- hl.exec_cmd("hypridle")
 end)
 
 hl.config({
@@ -39,11 +40,6 @@ hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- nvidia
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-hl.env("GBM_BACKEND", "nvidia-drm")
-hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
-hl.env("WLR_DRM_DEVICES", "/dev/dri/card1")
 
 -- Optional
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
@@ -72,8 +68,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 5,
-		gaps_out = 5,
+		gaps_in = 0,
+		gaps_out = 0,
 
 		border_size = 1,
 
