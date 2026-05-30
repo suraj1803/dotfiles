@@ -2,7 +2,7 @@
 {
   "layer": "top", 
   "position": "top", 
-  // "height": 10, 
+  // "height": 20, 
   "spacing": 4, 
   "reload_style_on_change" : true,
 
@@ -24,8 +24,8 @@
       "custom/sep",
       "memory",
       "custom/sep",
-      "disk",
-      "custom/sep",
+      // "disk",
+      // "custom/sep",
       "clock",
       "custom/sep",
       "pulseaudio",
@@ -48,7 +48,7 @@
       "seperate-outputs": false
     },
     "tray": {
-        "icon-size": 18,
+        "icon-size": 16,
         "spacing": 10
         // "icons": {
         //   "blueman": "bluetooth",
@@ -85,7 +85,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr} 󰊗",
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "format-linked": "{ifname} (No IP) 󰊗",

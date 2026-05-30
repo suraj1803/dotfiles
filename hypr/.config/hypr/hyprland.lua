@@ -1,45 +1,16 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
 	output = "eDP-1",
 	mode = "1920x1080@120",
 	position = "0x0",
-	scale = "1.2",
+	scale = "1.25",
 })
 
----------------------
----- MY PROGRAMS ----
----------------------
-
--- Set programs that you use
 local terminal = "kitty"
 local fileManager = "thunar"
--- local menu = "hyprlauncher"
 local menu = "wofi --show drun"
+local browser = "zen-browser"
 
 -------------------
----- AUTOSTART ----
--------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
 hl.on("hyprland.start", function()
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
@@ -47,19 +18,14 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dunst")
 end)
 
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
---
 hl.config({
 	xwayland = {
 		force_zero_scaling = true,
 	},
 })
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+
+hl.env("XCURSOR_SIZE", "18")
+hl.env("HYPRCURSOR_SIZE", "18")
 hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("GDK_BACKEND", "wayland,x11,*")
@@ -73,11 +39,11 @@ hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- nvidia
--- hl.env("LIBVA_DRIVER_NAME", "nvidia")
--- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
--- hl.env("GBM_BACKEND", "nvidia-drm")
--- hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
--- hl.env("WLR_DRM_DEVICES", "/dev/dri/card1")
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("GBM_BACKEND", "nvidia-drm")
+hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
+hl.env("WLR_DRM_DEVICES", "/dev/dri/card1")
 
 -- Optional
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
@@ -106,8 +72,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 0,
-		gaps_out = 0,
+		gaps_in = 5,
+		gaps_out = 5,
 
 		border_size = 1,
 
@@ -148,9 +114,9 @@ hl.config({
 		},
 
 		blur = {
-			enabled = true,
+			enabled = false,
 			size = 3,
-			passes = 1,
+			passes = 2,
 			vibrancy = 0.1696,
 		},
 	},
@@ -250,7 +216,7 @@ hl.config({
 		kb_options = "",
 		kb_rules = "",
 		repeat_rate = 35,
-		repeat_delay = 200,
+		repeat_delay = 300,
 
 		follow_mouse = 1,
 
@@ -290,6 +256,7 @@ hl.bind(
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill waybar ; waybar &"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
@@ -403,4 +370,12 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
+})
+
+hl.window_rule({
+	name = "move-hyprland-run",
+	match = { float = true },
+	rounding = 5,
+	float = true,
+	border_size = 0,
 })

@@ -23,8 +23,10 @@ window#waybar {
 
 #workspaces button {
   padding: 0 6px;
+  /* padding-top: 3px; */
   color: @cyn;
   background: transparent;
+
   border-bottom: 3px solid @bg;
 }
 #workspaces button.active {
@@ -56,7 +58,7 @@ button:hover {
 #disk,
 #network,
 #tray {
-  padding: 0 8px;
+  padding: 0 4px;
   color: @white;
 }
 
