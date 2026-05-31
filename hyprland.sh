@@ -137,7 +137,7 @@ setup_git() {
 
 setup_dotfiles() {
   info "Setting up dotfiles..."
-  git clone "https://github.com/suraj1803/dotfiles"
+  cd ~
   cd dotfiles
   stow hypr
   stow nvim
