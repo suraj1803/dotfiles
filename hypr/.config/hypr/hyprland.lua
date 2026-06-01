@@ -8,7 +8,7 @@ hl.monitor({
 local terminal = "kitty"
 local fileManager = "thunar"
 local menu = "wofi --show drun"
-local browser = "zen-browser"
+local browser = "google-chrome-stable"
 
 -------------------
 hl.on("hyprland.start", function()
@@ -25,8 +25,8 @@ hl.config({
 	},
 })
 
-hl.env("XCURSOR_SIZE", "18")
-hl.env("HYPRCURSOR_SIZE", "18")
+hl.env("XCURSOR_SIZE", "20")
+hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("GDK_BACKEND", "wayland,x11,*")

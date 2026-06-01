@@ -24,6 +24,8 @@ PACKAGES=(
 
     #Terminal
     kitty
+    tmux
+    zsh
 
     # files & media
     imv 
@@ -58,6 +60,7 @@ PACKAGES=(
 
   AUR_PACKAGES=(
     google-chrome
+    bibata-cursor-theme
   )
 
 # ==================================================
@@ -147,6 +150,10 @@ setup_dotfiles() {
   # cp -r dotfiles/nvim ~/.config/
 }
 
+setup_tmux() {
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 # ==================================================
 # Hyprland
 # ==================================================
@@ -184,6 +191,7 @@ main() {
   enable_services
   setup_git
   setup_dotfiles
+  setup_tmux
   setup_hyprland
 
   info "Setup complete."
