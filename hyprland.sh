@@ -11,6 +11,7 @@ set -euo pipefail
 
 PACKAGES=(
     git
+    nwg-look
     github-cli
     nvim
     nodejs
@@ -19,6 +20,8 @@ PACKAGES=(
     ripgrep
     fzf
     tree-sitter-cli
+    htop
+    btop
     curl
     wget
 
@@ -46,6 +49,10 @@ PACKAGES=(
     xdg-desktop-portal-gtk
     xdg-desktop-portal
     dunst  # notification daemon
+    qt5-wayland
+    qt6-wayland
+    qt5ct
+    qt6ct
     network-manager-applet
     brightnessctl
     playerctl
@@ -184,6 +191,7 @@ setup_nvidia() {
 # ==================================================
 
 main() {
+ cd ~
   update_system
   install_yay
   install_packages

@@ -17,7 +17,8 @@
 }
 
 window#waybar {
-  background-color: rgba(26, 27, 38, 0.85);
+  /* background-color: rgba(26, 27, 38, 0.7); */
+  background-color: rgba(0, 0, 0, 0.5);
   color: @fg;
 }
 
@@ -27,7 +28,7 @@ window#waybar {
   color: @cyn;
   background: transparent;
 
-  border-bottom: 3px solid @bg;
+  /* border-bottom: 3px solid @bg; */
 }
 #workspaces button.active {
   color: @cyn;

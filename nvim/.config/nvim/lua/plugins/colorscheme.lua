@@ -91,7 +91,7 @@ return {
 				sidebars = "transparent",
 				floats = "transparent",
 			},
-			transparent = false,
+			transparent = true,
 		})
 
 		vim.cmd([[colorscheme tokyonight]])

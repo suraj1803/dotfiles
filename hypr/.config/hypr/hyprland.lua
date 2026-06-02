@@ -16,7 +16,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("waybar & hyprpaper")
 	hl.exec_cmd("dunst")
-	-- hl.exec_cmd("hypridle")
+	hl.exec_cmd("hypridle")
 end)
 
 hl.config({
@@ -68,8 +68,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 0,
-		gaps_out = 0,
+		gaps_in = 2,
+		gaps_out = 5,
 
 		border_size = 1,
 
@@ -95,8 +95,8 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 0,
-		rounding_power = 2,
+		rounding = 8,
+		rounding_power = 5,
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1.0,
@@ -110,7 +110,7 @@ hl.config({
 		},
 
 		blur = {
-			enabled = false,
+			enabled = true,
 			size = 3,
 			passes = 2,
 			vibrancy = 0.1696,
@@ -255,6 +255,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill waybar ; waybar &"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("killall waybar || waybar"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard"))
@@ -358,7 +359,14 @@ hl.window_rule({
 --     no_anim = true,
 -- })
 -- overlayLayerRule:set_enabled(false)
-
+--
+hl.layer_rule({
+	name = "waybar-blur",
+	match = {
+		namespace = "^waybar$",
+	},
+	blur = true,
+})
 -- Hyprland-run windowrule
 hl.window_rule({
 	name = "move-hyprland-run",
@@ -373,5 +381,11 @@ hl.window_rule({
 	match = { float = true },
 	rounding = 5,
 	float = true,
+	border_size = 0,
+})
+hl.window_rule({
+	name = "floating-windows",
+	match = { float = true },
+
 	border_size = 0,
 })
