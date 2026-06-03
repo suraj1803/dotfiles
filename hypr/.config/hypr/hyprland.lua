@@ -91,11 +91,11 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "dwindle",
+		layout = "monocle",
 	},
 
 	decoration = {
-		rounding = 8,
+		rounding = 10,
 		rounding_power = 5,
 
 		-- Change transparency of focused and unfocused windows
@@ -256,6 +256,8 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill waybar ; waybar &"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("killall waybar || waybar"))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + L", hl.dsp.layout("cyclenext"))
+hl.bind(mainMod .. " + H", hl.dsp.layout("cycleprev"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard"))
