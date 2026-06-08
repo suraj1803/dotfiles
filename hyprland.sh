@@ -60,9 +60,15 @@ PACKAGES=(
     pipewire
     wireplumber
     pipewire-pulse
+    fastfetch
+
+    # fonts
     ttf-jetbrains-mono-nerd
     ttf-cascadia-mono-nerd
-    fastfetch
+    noto-fonts
+    noto-fonts-emoji
+    noto-fonts-extra
+    noto-fonts-cjk
   )
 
   AUR_PACKAGES=(
