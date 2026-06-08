@@ -95,7 +95,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 8,
 		rounding_power = 5,
 
 		-- Change transparency of focused and unfocused windows
@@ -390,4 +390,5 @@ hl.window_rule({
 	match = { float = true },
 
 	border_size = 0,
+	rounding = 0,
 })

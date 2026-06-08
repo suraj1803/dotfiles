@@ -1,76 +1,123 @@
-//  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
-//  |   __|     |__   | | | |   __|   __| | | |   --|     |
-//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  ARCH  
-//
-//  by Bina
-
-
-// execute with: fastfetch --colors-block-range-start 9 --colors-block-width 3
-
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "source": "~/.config/fastfetch/arch.txt",
-        "padding": {
-            "top": 2,
-            "right": 6
-        }
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "./logo.png",
+    "width": 25,
+    "height": null,
+    "preserveAspectRatio": true,
+    "padding": {
+      "top": 3,
+      "left": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "keys": "38;2;170;255;255",
+      "title": "38;2;76;87;127",
+      "output": "38;2;255;255;255"
     },
-    "display": {
-        "separator": " "
+    "size": {
+      "binaryPrefix": "si"
+    }
+  },
+  "modules": [
+    "title",
+    // HARDWARE
+    {
+      "type": "custom",
+      "format": "{#title}┌── {#keys} Hardware {#title}────────────────────────────────────┐"
     },
-    "modules": [
-	"break",
-	"break",
-	{
-            "type": "title",
-            "keyWidth": 10
-        },
-        "break",
-        {
-            "type": "os",
-            "key": " ",
-            "keyColor": "33",  // = color3
-        },
-        {
-            "type": "kernel",
-            "key": " ",
-            "keyColor": "33",
-        },
-        {
-            "type": "packages",
-            "format": "{} (pacman)",
-            "key": " ",
-            "keyColor": "33",  
-        },
-        {
-            "type": "shell",
-            "key": " ",
-            "keyColor": "33", 
-        },
-        {
-            "type": "terminal",
-            "key": " ",
-            "keyColor": "33", 
-        },
-        {
-            "type": "wm",
-            "key": " ",
-            "keyColor": "33", 
-        },
-        {
-            "type": "uptime",
-            "key": " ",
-            "keyColor": "33", 
-        },
-        {
-            "type": "media",
-            "key": "󰝚 ",
-            "keyColor": "33", 
-        },
-        "break",
-        "colors",
-        "break",
-        "break",
-    ]
+    {
+      "type": "host",
+      "key": "│ "
+    },
+    {
+      "type": "cpu",
+      "key": "│ ├─ ",
+      "format": "{1}"
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├─ "
+    },
+    {
+      "type": "display",
+      "key": "│ ├─ 󰍹"
+    },
+    {
+      "type": "memory",
+      "key": "│ ├─ "
+    },
+    {
+      "type": "disk",
+      "key": "│ ├─ ",
+      "folders": "/"
+    },
+    {
+      "type": "battery",
+      "key": "│ └─ "
+    },
+    {
+      "type": "custom",
+      "format": "{#title}└──────────────────────────────────────────────────┘"
+    },
+    // SOFTWARE
+    {
+      "type": "custom",
+      "format": "{#title}┌── {#keys} Software {#title}──────────────┐"
+    },
+    {
+      "type": "os",
+      "key": "│ "
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├─ "
+    },
+    {
+      "type": "uptime",
+      "key": "│ ├─ "
+    },
+    {
+      "type": "packages",
+      "key": "│ ├─ "
+    },
+    {
+      "type": "shell",
+      "key": "│ ├─ "
+    },
+    {
+      "type": "terminal",
+      "key": "│ └─ "
+    },
+    {
+      "type": "custom",
+      "format": "{#title}└────────────────────────────┘"
+    },
+    // DESTKOP
+    {
+      "type": "custom",
+      "format": "{#title}┌── {#keys} Desktop {#title}──────────────┐"
+    },
+    {
+      "type": "wm",
+      "key": "│ "
+    },
+    {
+      "type": "de",
+      "key": "│ └─ "
+    },
+    {
+      "type": "custom",
+      "format": "{#title}└───────────────────────────┘"
+    },
+    {
+      "type": "colors",
+      "symbol": "square",
+      "paddingLeft": 2
+    }
+  ]
 }

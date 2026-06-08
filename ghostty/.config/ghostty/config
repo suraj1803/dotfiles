@@ -1,6 +1,5 @@
-# theme = Gruvbox Dark
-# theme = "Gruvbox Dark"
-background=#000000
+theme = "TokyoNight Night"
+# background=#000000
 font-family="CaskaydiaMono Nerd Font Mono"
 font-size=20
 #maximize=true
@@ -11,8 +10,6 @@ window-decoration=none
 #gtk-titlebar=false
 window-padding-x = 0
 window-padding-y = 0
-adjust-cell-width = 0%
-adjust-cell-height = 0%
 
 # keybindings
 keybind = performable:ctrl+c=copy_to_clipboard
