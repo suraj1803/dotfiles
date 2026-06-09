@@ -24,6 +24,7 @@ PACKAGES=(
     btop
     curl
     wget
+    wl-clipboard
 
     #Terminal
     kitty
