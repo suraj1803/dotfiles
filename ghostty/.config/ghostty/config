@@ -1,13 +1,14 @@
-theme = "TokyoNight Night"
-# background=#000000
+
+theme = "Kitty Default"
+background=#000000
 font-family="CaskaydiaMono Nerd Font Mono"
-font-size=20
-#maximize=true
+font-size=18
+maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=false
-# background-opacity=0.85
+background-opacity=0.85
 window-decoration=none
-#gtk-titlebar=false
+gtk-titlebar=false
 window-padding-x = 0
 window-padding-y = 0
 
