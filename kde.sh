@@ -62,6 +62,7 @@ which
 zsh
 kitty
 tmux
+eza
 
 # Editors
 
