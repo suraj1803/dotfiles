@@ -119,6 +119,8 @@ ttf-dejavu
 ttf-liberation
 ttf-roboto
 gnu-free-fonts
+adobe-source-sans-fonts 
+adobe-source-serif-fonts 
 )
 
 AUR_PACKAGES=(
@@ -225,8 +227,7 @@ setup_zsh() {
   fi
 
   if [[ ! -d ~/.oh-my-zsh ]]; then
-    RUNZSH=no CHSH=no sh -c 
-    "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
   local plugin_dir
@@ -289,11 +290,7 @@ setup_nvidia() {
 
   info "Installing NVIDIA packages..."
 
-  sudo pacman -S --needed --noconfirm 
-  nvidia-open 
-  nvidia-utils 
-  nvidia-settings 
-  lib32-nvidia-utils
+  sudo pacman -S --needed --noconfirm nvidia-open  nvidia-utils  nvidia-settings 
 
   info "Remember to:"
   echo "1. Add:"
@@ -319,7 +316,7 @@ main() {
   enable_services
 
   setup_git
-  setup_zsh
+ # setup_zsh
   setup_dotfiles
   setup_tmux
 

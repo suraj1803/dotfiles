@@ -1,7 +1,6 @@
-
 theme = "Kitty Default"
 background=#000000
-font-family="CaskaydiaMono Nerd Font Mono"
+font-family="ComicShannsMono Nerd Font Mono"
 font-size=18
 maximize=true
 shell-integration-features=no-cursor 

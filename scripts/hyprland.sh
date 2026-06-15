@@ -66,6 +66,7 @@ PACKAGES=(
     # fonts
     ttf-jetbrains-mono-nerd
     ttf-cascadia-mono-nerd
+    otf-comicshanns-nerd
     noto-fonts
     noto-fonts-emoji
     noto-fonts-extra
@@ -198,7 +199,7 @@ setup_nvidia() {
 # ==================================================
 
 main() {
- cd ~
+  cd ~
   update_system
   install_yay
   install_packages
