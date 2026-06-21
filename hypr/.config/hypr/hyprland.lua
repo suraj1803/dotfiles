@@ -5,7 +5,7 @@ hl.monitor({
 	scale = "1.25",
 })
 
-local terminal = "kitty"
+local terminal = "alacritty"
 local fileManager = "thunar"
 local menu = "wofi --show drun"
 local browser = "google-chrome-stable"
@@ -27,8 +27,8 @@ hl.config({
 
 hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
-hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
-hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
+hl.env("HYPRCURSOR_THEME", "breeze_cursors")
+hl.env("XCURSOR_THEME", "breeze_cursors")
 hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
@@ -68,8 +68,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
-		gaps_in = 2,
-		gaps_out = 5,
+		gaps_in = 0,
+		gaps_out = 0,
 
 		border_size = 1,
 
@@ -95,7 +95,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 8,
+		rounding = 0,
 		rounding_power = 5,
 
 		-- Change transparency of focused and unfocused windows

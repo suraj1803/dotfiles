@@ -12,13 +12,13 @@
 
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
 }
 
 window#waybar {
-  /* background-color: rgba(26, 27, 38, 0.7); */
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(26, 27, 38, 1);
+  /* background-color: rgba(0, 0, 0, 0.4); */
   color: @fg;
 }
 

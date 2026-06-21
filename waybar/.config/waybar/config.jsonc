@@ -77,11 +77,11 @@
         "warning": 30,
         "critical": 15
       },
-      "format": "Bat: {capacity}% {icon} {time}",
-      "format-plugged": "{capacity}% ",
+      "format": "Bat: {capacity}% {icon}",
+      "format-plugged": "{capacity}% 󰂄",
       "format-alt": "Bat {capacity}%",
       "format-time": "{H}:{M}",
-      "format-icons": ["", "", "", "", ""]
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂁", "󰂂", "󰁹"]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface

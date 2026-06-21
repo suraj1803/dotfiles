@@ -42,6 +42,8 @@ PACKAGES=(
     hyprland
     hyprshot 
     hyprshutdown
+    hypridle 
+    hyprlock
     hyprpaper
     hyprpolkitagent
     wofi
@@ -128,7 +130,7 @@ install_packages() {
 install_aur_packages() {
   info "Installing AUR packages..."
 
-  yay -S --needed --noconfirm "${AUR_PACKAGES[@]}"
+  paru -S --needed --noconfirm "${AUR_PACKAGES[@]}"
 }
 
 # ==================================================
@@ -158,6 +160,7 @@ setup_dotfiles() {
   cd ~
   cd dotfiles
   stow hypr
+  stow hyprlock
   stow nvim
   stow waybar 
   stow kitty
@@ -201,14 +204,14 @@ setup_nvidia() {
 main() {
   cd ~
   update_system
-  install_yay
+  # install_yay
   install_packages
   install_aur_packages
   enable_services
   setup_git
   setup_dotfiles
   setup_tmux
-  setup_hyprland
+  # setup_hyprland
 
   info "Setup complete."
 }
