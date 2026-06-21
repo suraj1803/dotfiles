@@ -1,49 +1,128 @@
-[general]
-live_config_reload = true
+[env]
+TERM = "xterm-256color"
+# WINIT_X11_SCALE_FACTOR = "1"
+
 [window]
 dynamic_padding = true
+# decorations = "full"
+title = "Alacritty@CachyOS"
 opacity = 0.8
-# blur = false
+decorations_theme_variant = "Dark"
 
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "0x000000"
 [font]
-normal = {family = 'JetBrainsMono Nerd Font Mono'}
-size = 16
+size = 18
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
 
 [cursor]
-style = {shape = "Block", blinking = "Off"}
+style = "Block"
+vi_mode_style = "None"
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
 
 [keyboard]
-bindings = [
-{ key = "c", mods = "Control|Shift", action = "copy" },
-{ key = "v", mods = "Control", action = "paste" },
-]
+[[keyboard.bindings]]
+key = "Paste"
+action = "Paste"
 
+[[keyboard.bindings]]
+key = "Copy"
+action = "Copy"
 
-# Colors (iTerm 2 default theme)
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "ClearLogNotice"
 
-# Default colors
-[colors.primary]
-background = '#000000'
-foreground = '#ffffff'
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+mode = "~Vi"
+chars = "\f"
 
-# Normal colors
-[colors.normal]
-black   = '#2e2e2e'
-red     = '#eb4129'
-green   = '#abe047'
-yellow  = '#f6c744'
-blue    = '#47a0f3'
-magenta = '#7b5cb0'
-cyan    = '#64dbed'
-white   = '#e5e9f0'
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageUp"
 
-# Bright colors
-[colors.bright]
-black   = '#565656'
-red     = '#ec5357'
-green   = '#c0e17d'
-yellow  = '#f9da6a'
-blue    = '#49a4f8'
-magenta = '#a47de9'
-cyan    = '#99faf2'
-white   = '#ffffff'
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToBottom"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+mode = "Vi"
+action = "ClearSelection"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[general]
+live_config_reload = true
+working_directory = "None"
