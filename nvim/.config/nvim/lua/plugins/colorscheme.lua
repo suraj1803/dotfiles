@@ -1,99 +1,44 @@
 -- return {
--- 	"catppuccin/nvim",
--- 	name = "catppuccin",
+-- 	"folke/tokyonight.nvim",
+-- 	lazy = false,
 -- 	priority = 1000,
+-- 	opts = {},
 -- 	config = function()
--- 		require("catppuccin").setup({
--- 			flavour = "mocha", -- latte, frappe, macchiato, mocha
--- 			background = { -- :h background
--- 				light = "latte",
--- 				dark = "mocha",
--- 			},
--- 			transparent_background = true, -- disables setting the background color.
--- 			float = {
--- 				transparent = true, -- enable transparent floating windows
--- 				solid = false, -- use solid styling for floating windows, see |winborder|
--- 			},
--- 			show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
--- 			term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
--- 			dim_inactive = {
--- 				enabled = false, -- dims the background color of inactive window
--- 				shade = "dark",
--- 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
--- 			},
--- 			no_italic = false, -- Force no italic
--- 			no_bold = false, -- Force no bold
--- 			no_underline = false, -- Force no underline
+-- 		require("tokyonight").setup({
+-- 			style = "night",
 -- 			styles = {
--- 				comments = { "italic" },
--- 				conditionals = { "italic", "bold" },
--- 				loops = { "italic" },
--- 				functions = { "bold" },
--- 				keywords = { "bold" },
--- 				strings = { "italic" },
--- 				variables = {},
--- 				numbers = { "bold" },
--- 				booleans = { "bold", "italic" },
--- 				properties = {},
--- 				types = { "bold" },
--- 				operators = {},
+-- 				sidebars = "transparent",
+-- 				floats = "transparent",
 -- 			},
--- 			lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
--- 				virtual_text = {
--- 					errors = { "italic" },
--- 					hints = { "italic" },
--- 					warnings = { "italic" },
--- 					information = { "italic" },
--- 					ok = { "italic" },
--- 				},
--- 				underlines = {
--- 					errors = { "underline" },
--- 					hints = { "underline" },
--- 					warnings = { "underline" },
--- 					information = { "underline" },
--- 					ok = { "underline" },
--- 				},
--- 				inlay_hints = {
--- 					background = true,
--- 				},
--- 			},
--- 			color_overrides = {},
--- 			custom_highlights = {},
--- 			default_integrations = true,
--- 			auto_integrations = false,
--- 			integrations = {
--- 				cmp = true,
--- 				gitsigns = true,
--- 				nvimtree = false,
--- 				notify = false,
--- 				mini = {
--- 					enabled = true,
--- 					indentscope_color = "",
--- 				},
--- 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
--- 			},
+-- 			transparent = true,
 -- 		})
 --
--- 		-- setup must be called before loading
--- 		vim.cmd.colorscheme("catppuccin")
+-- 		vim.cmd([[colorscheme tokyonight]])
 -- 	end,
 -- }
 
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
+	"rebelot/kanagawa.nvim",
 	config = function()
-		require("tokyonight").setup({
-			style = "night",
-			styles = {
-				sidebars = "transparent",
-				floats = "transparent",
+		-- Default options:
+		require("kanagawa").setup({
+			compile = false, -- enable compiling the colorscheme
+			undercurl = true, -- enable undercurls
+			commentStyle = { italic = true },
+			functionStyle = {},
+			keywordStyle = { italic = true },
+			statementStyle = { bold = true },
+			typeStyle = {},
+			colors = {
+				theme = { all = { ui = { bg_gutter = "none" } } },
 			},
-			transparent = true,
+			transparent = true, -- do not set background color
+			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+			terminalColors = true, -- define vim.g.terminal_color_{0,17}
+			theme = "dragon", -- Load "wave" theme
 		})
 
-		vim.cmd([[colorscheme tokyonight]])
+		-- setup must be called before loading
+		vim.cmd("colorscheme kanagawa")
 	end,
 }
