@@ -78,7 +78,7 @@
         "critical": 15
       },
       "format": "Bat: {capacity}% {icon}",
-      "format-plugged": "{capacity}% 󰂄",
+      "format-plugged": "Chr: {capacity}% 󰂄",
       "format-alt": "Bat {capacity}%",
       "format-time": "{H}:{M}",
       "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂁", "󰂂", "󰁹"]

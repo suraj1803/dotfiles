@@ -11,6 +11,7 @@ set -euo pipefail
 
 PACKAGES=(
     git
+    eza
     nwg-look
     github-cli
     nvim
