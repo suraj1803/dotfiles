@@ -27,8 +27,8 @@ hl.config({
 
 hl.env("XCURSOR_SIZE", "20")
 hl.env("HYPRCURSOR_SIZE", "20")
-hl.env("HYPRCURSOR_THEME", "breeze_cursors")
-hl.env("XCURSOR_THEME", "breeze_cursors")
+hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
+hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
@@ -91,7 +91,7 @@ hl.config({
 		-- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
 		allow_tearing = false,
 
-		layout = "monocle",
+		layout = "dwindle",
 	},
 
 	decoration = {

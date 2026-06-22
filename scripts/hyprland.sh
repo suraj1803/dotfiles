@@ -25,6 +25,10 @@ PACKAGES=(
     curl
     wget
     wl-clipboard
+    power-profiles-daemon
+    bluez
+    bluez-utils 
+    blueman
 
     #Terminal
     kitty
@@ -61,6 +65,7 @@ PACKAGES=(
     playerctl
     pavucontrol
     pipewire
+    pipewire-jack
     wireplumber
     pipewire-pulse
     fastfetch
@@ -130,7 +135,7 @@ install_packages() {
 install_aur_packages() {
   info "Installing AUR packages..."
 
-  paru -S --needed --noconfirm "${AUR_PACKAGES[@]}"
+  yay -S --needed --noconfirm "${AUR_PACKAGES[@]}"
 }
 
 # ==================================================
@@ -142,6 +147,7 @@ enable_services() {
 
   sudo systemctl enable NetworkManager
   sudo systemctl enable bluetooth
+  sudo systemctl enable power-profiles-daemon
 }
 
 # ==================================================
@@ -194,7 +200,7 @@ setup_nvidia() {
   sudo pacman -S --needed --noconfirm \
     nvidia-open \
     nvidia-utils \
-    lib32-nvidia-utils
+    nvidia-settings 
 }
 
 # ==================================================
@@ -204,7 +210,7 @@ setup_nvidia() {
 main() {
   cd ~
   update_system
-  # install_yay
+  install_yay
   install_packages
   install_aur_packages
   enable_services
