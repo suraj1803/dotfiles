@@ -259,7 +259,12 @@ hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + L", hl.dsp.layout("cyclenext"))
 hl.bind(mainMod .. " + H", hl.dsp.layout("cycleprev"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+-- hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + V", function()
+	hl.dispatch(hl.dsp.window.float({ action = "set" }))
+	hl.dispatch(hl.dsp.window.resize({ x = 1200, y = 800 }))
+	hl.dispatch(hl.dsp.window.center())
+end)
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -385,10 +390,12 @@ hl.window_rule({
 	float = true,
 	border_size = 0,
 })
+
 hl.window_rule({
 	name = "floating-windows",
 	match = { float = true },
-
 	border_size = 0,
 	rounding = 0,
+	size = { 1200, 800 },
+	center = true,
 })

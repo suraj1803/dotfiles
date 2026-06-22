@@ -217,6 +217,7 @@ main() {
   setup_git
   setup_dotfiles
   setup_tmux
+  setup_nvidia
   # setup_hyprland
 
   info "Setup complete."
