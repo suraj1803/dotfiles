@@ -18,40 +18,80 @@
 -- }
 
 -- return {
--- 	"rebelot/kanagawa.nvim",
+-- 	"bluz71/vim-moonfly-colors",
+-- 	name = "moonfly",
+-- 	lazy = false,
+-- 	priority = 1000,
 -- 	config = function()
--- 		-- Default options:
--- 		require("kanagawa").setup({
--- 			compile = false, -- enable compiling the colorscheme
--- 			undercurl = true, -- enable undercurls
--- 			commentStyle = { italic = true },
--- 			functionStyle = {},
--- 			keywordStyle = { italic = true },
--- 			statementStyle = { bold = true },
--- 			typeStyle = {},
--- 			colors = {
--- 				theme = { all = { ui = { bg_gutter = "none" } } },
--- 			},
--- 			transparent = true, -- do not set background color
--- 			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
--- 			terminalColors = true, -- define vim.g.terminal_color_{0,17}
--- 			theme = "dragon", -- Load "wave" theme
--- 		})
---
--- 		-- setup must be called before loading
--- 		vim.cmd("colorscheme kanagawa")
+-- 		-- Lua initialization file
+-- 		vim.g.moonflyTransparent = true
+-- 		-- Lua initialization file
+-- 		vim.cmd([[colorscheme moonfly]])
 -- 	end,
 -- }
 
+-- Using lazy.nvim
 return {
-	"bluz71/vim-moonfly-colors",
-	name = "moonfly",
+	"deparr/tairiki.nvim",
 	lazy = false,
-	priority = 1000,
+	priority = 1000, -- recommended if you use tairiki as your default theme
 	config = function()
-		-- Lua initialization file
-		vim.g.moonflyTransparent = true
-		-- Lua initialization file
-		vim.cmd([[colorscheme moonfly]])
+		require("tairiki").setup({
+			palette = "dark", -- main palette, available options: dark, light, dimmed, tomorrow, light_legacy
+			default_dark = "dark",
+			default_light = "light",
+			transparent = true, -- don't set background colors
+			terminal = false, -- override nvim terminal colors
+			end_of_buffer = false, -- show end of buffer filler lines (tildes)
+			visual_bold = false, -- bolden visual selections
+			cmp_itemkind_reverse = false, -- reverse fg/bg on nvim-cmp item kinds
+
+			diagnostics = {
+				darker = false, -- darken diagnostic virtual text
+				background = false, -- add background to diagnostic virtual text
+				undercurl = true, -- use undercurls for inline diagnostics
+			},
+
+			-- style for different syntactic tokens
+			-- see :help nvim_set_hl() for available keys
+			code_style = {
+				comments = { italic = true },
+				conditionals = {},
+				keywords = {},
+				functions = {},
+				strings = {},
+				variables = {},
+				parameters = {},
+				types = {},
+			},
+
+			-- lualine theme config
+			lualine = {
+				transparent = true, -- remove background from center section
+			},
+
+			-- which plugins to enable
+			plugins = {
+				all = false, -- enable all supported plugins
+				none = false, -- ONLY set groups listed in :help highlight-groups (see lua/tairiki/groups/neovim.lua). Manually enabled plugins will also be ignored
+				auto = false, -- auto detect installed plugins, currently lazy.nvim only
+
+				-- or enable/disable plugins manually
+				-- see lua/tairiki/groups/init.lua for the full list of available plugins
+				-- either the key or value from the M.plugins table can be used as the key here
+				--
+				-- setting a specific plugin manually overrides `all` and `auto`
+				treesitter = true,
+				semantic_tokens = true,
+			},
+
+			-- optional function to modify or add colors to the palette
+			-- palette definitions are in lua/tairiki/palette
+			colors = function(colors, opts) end,
+
+			-- optional function to override highlight groups
+			highlights = function(groups, colors, opts) end,
+		})
+		vim.cmd([[colorscheme tairiki]])
 	end,
 }

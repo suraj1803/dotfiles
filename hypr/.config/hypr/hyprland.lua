@@ -13,7 +13,7 @@ local browser = "google-chrome-stable"
 -------------------
 hl.on("hyprland.start", function()
 	hl.exec_cmd("nm-applet")
-	hl.exec_cmd("systemctl --user stop xdg-desktop-portal-kde.service")
+	-- hl.exec_cmd("systemctl --user stop xdg-desktop-portal-kde.service")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("waybar & hyprpaper")
 	hl.exec_cmd("dunst")
@@ -32,7 +32,7 @@ hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("XCURSOR_THEME", "Bibata-Original-Classic")
 hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_QPA_PLATFORMTHEME", "kde")
 hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("GDK_SCALE", "1.25")
 
@@ -40,13 +40,7 @@ hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
--- nvidia
-
--- Optional
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
------------------------
------ PERMISSIONS -----
------------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
 -- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
@@ -72,7 +66,7 @@ hl.config({
 		gaps_in = 0,
 		gaps_out = 0,
 
-		border_size = 1,
+		border_size = 0,
 
 		col = {
 			active_border = {
@@ -80,7 +74,7 @@ hl.config({
 					"rgba(7aa2f7ee)",
 					"rgba(bb9af7ee)",
 				},
-				angle = 45,
+				-- angle = 45,
 			},
 
 			inactive_border = "rgba(414868aa)",
@@ -263,7 +257,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 -- hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + V", function()
 	hl.dispatch(hl.dsp.window.float({ action = "set" }))
-	hl.dispatch(hl.dsp.window.resize({ x = 1200, y = 800 }))
+	-- hl.dispatch(hl.dsp.window.resize({ x = 1200, y = 800 }))
 	hl.dispatch(hl.dsp.window.center())
 end)
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
@@ -393,11 +387,11 @@ hl.window_rule({
 	border_size = 0,
 })
 
-hl.window_rule({
-	name = "floating-windows",
-	match = { float = true },
-	border_size = 0,
-	rounding = 0,
-	size = { 1200, 800 },
-	center = true,
-})
+-- hl.window_rule({
+-- 	name = "floating-windows",
+-- 	match = { float = true },
+-- 	border_size = 0,
+-- 	rounding = 0,
+-- 	size = { 1200, 800 },
+-- 	center = true,
+-- })

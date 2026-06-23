@@ -66,7 +66,7 @@ PACKAGES=(
     playerctl
     pavucontrol
     pipewire
-    pipewire-jack
+    # pipewire-jack
     wireplumber
     pipewire-pulse
     fastfetch
@@ -217,8 +217,8 @@ main() {
   enable_services
   setup_git
   setup_dotfiles
-  setup_tmux
-  setup_nvidia
+  # setup_tmux
+  # setup_nvidia
   # setup_hyprland
 
   info "Setup complete."

@@ -17,8 +17,8 @@
 }
 
 window#waybar {
-  background-color: rgba(26, 27, 38, 1);
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  /* background-color: rgba(26, 27, 38, 1); */
+  background-color: rgba(17, 17, 17, 1);
   color: @fg;
 }
 
