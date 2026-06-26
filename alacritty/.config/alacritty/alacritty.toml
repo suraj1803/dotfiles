@@ -7,7 +7,7 @@ dynamic_padding = true
 startup_mode = "Maximized"
 # decorations = "full"
 title = "Alacritty@CachyOS"
-# opacity = 0.85
+# opacity = 0.9
 decorations_theme_variant = "Dark"
 # padding = { x = 0, y = 2 }
 

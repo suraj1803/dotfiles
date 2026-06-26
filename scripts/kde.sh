@@ -310,17 +310,17 @@ setup_nvidia() {
 main() {
   update_system
   install_packages
- # install_paru
+  install_paru
   install_aur_packages
 
- # enable_services
+  enable_services
 
   setup_git
  # setup_zsh
   setup_dotfiles
   setup_tmux
 
- # setup_nvidia
+  setup_nvidia
 
   info "Setup complete."
 }
