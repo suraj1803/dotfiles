@@ -22,12 +22,6 @@ networkmanager
 network-manager-applet
 
 
-pipewire
-pipewire-pulse
-wireplumber
-pavucontrol
-
-
 brightnessctl
 
 
@@ -43,7 +37,6 @@ xorg-xinput
 picom
 feh
 papirus-icon-theme
-ttf-jetbrains-mono-nerd
 
 # File Manager
 
@@ -101,7 +94,7 @@ install_aur_packages() {
 main() {
   update_system
   install_packages
-  install_aur_packages
+  # install_aur_packages
 
 }
 
