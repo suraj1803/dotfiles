@@ -219,7 +219,7 @@ bindsym Mod4+Shift+s exec flameshot gui
 
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
-exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+# exec --no-startup-id /usr/lib/polkit-1/
 exec_always --no-startup-id feh --bg-scale ~/Pictures/
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #######################################################################
@@ -228,4 +228,5 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/
 #
 # i3-config-wizard will not launch if there already is a config file
 # in ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set) or
-# ~/.i3/config.
+# ~/.i3/config
+exec --no-startup-id lxpolkit
