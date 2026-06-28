@@ -214,6 +214,7 @@ bindsym Mod4+r mode "resize"
 bar {
   status_command i3status -c  ~/.config/i3/i3status.conf
 }
+# bindsym Mod4+Shift+b bar mode toggle
 
 bindsym Mod4+Shift+s exec flameshot gui
 

@@ -1,11 +1,10 @@
-theme = "Kitty Default"
-background=#000000
-font-family="ComicShannsMono Nerd Font Mono"
+background=#111111
+font-family="JetBrainsMono Nerd Font Mono"
 font-size=18
-maximize=true
+#maximize=true
 shell-integration-features=no-cursor 
 window-padding-balance=false
-background-opacity=0.85
+# background-opacity=0.85
 window-decoration=none
 gtk-titlebar=false
 window-padding-x = 0
