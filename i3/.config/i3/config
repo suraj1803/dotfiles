@@ -28,14 +28,14 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# gaps outer 2
+# gaps inner 2
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 default_border pixel 1
 hide_edge_borders smart
-# for_window [class=".*"] border pixel 0
-# for_window [class=".*"] title_format ""
-# for_window [floating] resize set  1500 800
 for_window [floating] move position center
 
 # Toggle floating with size reset
@@ -49,8 +49,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # Brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -214,14 +214,14 @@ bindsym Mod4+r mode "resize"
 bar {
   status_command i3status -c  ~/.config/i3/i3status.conf
 }
-# bindsym Mod4+Shift+b bar mode toggle
+
 
 bindsym Mod4+Shift+s exec flameshot gui
 
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id picom -experimental-backends --config ~/.config/picom/picom.conf
 # exec --no-startup-id /usr/lib/polkit-1/
-exec_always --no-startup-id feh --bg-scale ~/Pictures/
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-5yrwq8.jpg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a

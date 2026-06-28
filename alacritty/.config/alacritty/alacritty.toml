@@ -9,7 +9,7 @@ startup_mode = "Maximized"
 title = "Alacritty@CachyOS"
 # opacity = 0.9
 decorations_theme_variant = "Dark"
-# padding = { x = 0, y = 2 }
+# padding = { x = 4, y = 2 }
 
 
 
@@ -90,7 +90,6 @@ size = 18
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
-
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
