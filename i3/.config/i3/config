@@ -180,7 +180,8 @@ bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod4+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod4+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -219,7 +220,7 @@ bar {
 bindsym Mod4+Shift+s exec flameshot gui
 
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id picom -experimental-backends --config ~/.config/picom/picom.conf
+# exec --no-startup-id picom --config ~/.config/picom/picom.conf
 # exec --no-startup-id /usr/lib/polkit-1/
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-5yrwq8.jpg
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
