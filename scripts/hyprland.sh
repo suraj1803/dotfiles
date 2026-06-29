@@ -168,9 +168,9 @@ setup_dotfiles() {
   cd dotfiles
   stow hypr
   stow hyprlock
-  stow nvim
+  # stow nvim
   stow waybar 
-  stow kitty
+  # stow kitty
   # Example
   # cp -r dotfiles/nvim ~/.config/
 }
@@ -211,11 +211,11 @@ setup_nvidia() {
 main() {
   cd ~
   update_system
-  install_yay
+  # install_yay
   install_packages
-  install_aur_packages
-  enable_services
-  setup_git
+  # install_aur_packages
+  # enable_services
+  # setup_git
   setup_dotfiles
   # setup_tmux
   # setup_nvidia

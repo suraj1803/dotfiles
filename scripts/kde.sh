@@ -73,6 +73,8 @@ neovim
 htop
 btop
 fastfetch
+xdg-user-dirs
+xdg-user-dirs-gtk
 
 # Files
 
@@ -199,6 +201,8 @@ enable_services() {
   sudo systemctl enable --now bluetooth
   sudo systemctl enable --now sshd
   sudo systemctl enable power-profiles-daemon
+  xdg-user-dirs-update
+  xdg-user-dirs-gtk-update
 }
 
 # ==================================================
