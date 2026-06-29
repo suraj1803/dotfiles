@@ -12,6 +12,7 @@ local browser = "google-chrome-stable"
 
 -------------------
 hl.on("hyprland.start", function()
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("nm-applet")
 	-- hl.exec_cmd("systemctl --user stop xdg-desktop-portal-kde.service")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
@@ -66,7 +67,7 @@ hl.config({
 		gaps_in = 0,
 		gaps_out = 0,
 
-		border_size = 0,
+		border_size = 1,
 
 		col = {
 			active_border = {
@@ -105,7 +106,7 @@ hl.config({
 		},
 
 		blur = {
-			enabled = true,
+			enabled = false,
 			size = 3,
 			passes = 2,
 			vibrancy = 0.1696,
@@ -113,7 +114,7 @@ hl.config({
 	},
 
 	animations = {
-		enabled = true,
+		enabled = false,
 	},
 })
 
