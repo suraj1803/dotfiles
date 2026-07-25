@@ -9,10 +9,10 @@ hl.monitor({
 	scale = "1.25",
 })
 
-local terminal = "alacritty"
+local terminal = "kitty"
 local fileManager = "dolphin"
--- local menu = "wofi --show drun"
-local menu = "vicinae toggle"
+local menu = "rofi -show drun"
+-- local menu = "vicinae toggle"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprland-session.target")
@@ -312,6 +312,32 @@ hl.window_rule({
 	float = true,
 })
 
+hl.window_rule({
+	name = "make-intellij-welcome-floating",
+	match = { class = "jetbrains-idea-ce", title = "Welcome to IntelliJ IDEA" },
+
+	float = true,
+})
+hl.window_rule({
+	name = "make-intellij-welcome-floating",
+	match = { class = "jetbrains-idea", title = "Welcome to IntelliJ IDEA" },
+
+	float = true,
+})
+
+hl.window_rule({
+	name = "floating window for blueman",
+	match = { class = "blueman-manager" },
+
+	float = true,
+})
+hl.window_rule({
+	name = "floating window for pavucontrol",
+	match = { class = "org.pulseaudio.pavucontrol" },
+
+	float = true,
+})
+
 -- Disable borders and rounding when there is only one tiled window visible
-hl.workspace_rule({ workspace = "w[tv1]", border_size = 0 })
-hl.workspace_rule({ workspace = "f[0]", border_size = 0 })
+-- hl.workspace_rule({ workspace = "w[tv1]", border_size = 0 })
+-- hl.workspace_rule({ workspace = "f[0]", border_size = 0 })

@@ -36,7 +36,7 @@ multiplier = 3
 size = 20
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "CaskaydiaMono Nerd Font Mono"
 style = "Normal"
 
 [selection]

@@ -27,15 +27,10 @@ install_packages fonts
 xdg-user-dirs-update
 xdg-user-dirs-gtk-update
 
-ln -sf "$SCRIPT_DIR/configs/x11/.xinitrc" ~/.xinitrc
-ln -sf "$SCRIPT_DIR/configs/x11/.Xresources" ~/.Xresources
 
 if [[ "$1" == "i3" ]]; then
     echo "Installing i3 packages..."
     install_packages i3
-    ln -sf "$SCRIPT_DIR/configs/i3" ~/.config/i3
-    ln -sf "$SCRIPT_DIR/configs/picom" ~/.config/picom
-    ln -sf "$SCRIPT_DIR/configs/flameshot" ~/.config/flameshot
 fi
 
 if [[ "$1" == "hyprland" ]]; then
@@ -43,7 +38,4 @@ if [[ "$1" == "hyprland" ]]; then
     install_packages hyprland
 fi
 
-ln -sf "$SCRIPT_DIR/configs/nvim" ~/.config/nvim
-ln -sf "$SCRIPT_DIR/configs/tmux/.tmux.conf" ~/.tmux.conf
 setup_tmux
-ln -sf "$SCRIPT_DIR/configs/alacritty" ~/.config/alacritty
