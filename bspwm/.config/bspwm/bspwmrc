@@ -53,8 +53,9 @@ picom &
 feh --bg-scale ~/Pictures/wallhaven-5yrwq8.jpg
 xsetroot -cursor_name left_ptr
 sxhkd &
-lxpolkit &
-vicinae server &
+# lxpolkit &
+# vicinae server &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 dunst &
 bash ~/.config/polybar/launch.sh  &

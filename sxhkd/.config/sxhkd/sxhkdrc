@@ -32,11 +32,13 @@ super + Return
     kitty
 
 # program launcher
-# super + @space
-#    dmenu_run -l 5
+super + d
+   dmenu_run -l 5
 
-super + @space
-    vicinae toggle
+# super + space
+#    dmenu_run -l 5
+# super + @space
+#     vicinae toggle
 super + shift + s
     flameshot gui
     

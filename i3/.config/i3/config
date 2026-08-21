@@ -1,4 +1,4 @@
-font pango:Hack Nerd Font 12px
+font pango:Hack Nerd Font Mono 10
 
 exec --no-startup-id dex --autostart --environment i3
 

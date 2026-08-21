@@ -3,7 +3,7 @@ live_config_reload = true
 working_directory = "None"
 import = [
 # "~/.config/alacritty/tomorrownight.toml"
-"~/.config/alacritty/gruvbox-material-dark.toml"
+# "~/.config/alacritty/gruvbox-material-dark.toml"
 ]
 [env]
 TERM = "xterm-256color"
@@ -36,8 +36,7 @@ multiplier = 3
 size = 20
 
 [font.normal]
-family = "CaskaydiaMono Nerd Font Mono"
-style = "Normal"
+family = "Hack Nerd Font Mono"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
