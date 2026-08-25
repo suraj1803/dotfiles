@@ -26,6 +26,7 @@ install_packages fonts
 
 xdg-user-dirs-update
 xdg-user-dirs-gtk-update
+setup_tmux
 
 
 if [[ "$1" == "i3" ]]; then
@@ -38,4 +39,3 @@ if [[ "$1" == "hyprland" ]]; then
     install_packages hyprland
 fi
 
-setup_tmux
