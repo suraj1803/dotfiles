@@ -38,7 +38,7 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec --no-startup-id ~/.local/bin/i3-app kitty
+bindsym Mod4+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym Mod4+q kill
@@ -47,7 +47,7 @@ bindsym Mod4+q kill
 # bindsym Mod4+space exec --no-startup-id dmenu_run -l 5
 bindsym Mod4+space exec --no-startup-id rofi -show drun
 # bindsym Mod4+space exec --no-startup-id vicinae toggle
-bindsym Mod4+b exec --no-startup-id ~/.local/bin/i3-app google-chrome
+bindsym Mod4+b exec --no-startup-id google-chrome
 bindsym Mod4+o exec --no-startup-id obsidian
 
 
@@ -195,9 +195,9 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 
-bar {
-  status_command i3status -c  ~/.config/i3/i3status.conf
-}
+# bar {
+#   status_command i3status -c  ~/.config/i3/i3status.conf
+# }
 
 
 bindsym Mod4+Shift+s exec --no-startup-id flameshot gui
@@ -209,6 +209,6 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-qrmjwl.jpg
 # exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
 set $PATH /home/suraj/.local/bin:$PATH
