@@ -16,7 +16,7 @@
     "network",
     "cpu",
     "battery",
-    "tray",
+    "tray"
   ],
 
   "hyprland/workspaces": {
@@ -24,7 +24,7 @@
     "all-outputs": true,
     "format": "{icon}",
     "persistent-workspaces": {
-      "*": 6, // 5 workspaces by default on every monitor
+      "*": 6 // 5 workspaces by default on every monitor
     }
   },
 
@@ -85,7 +85,7 @@
 
   "tray": {
     "spacing": 8,
-    "icon-size": 15,
+    "icon-size": 15
 
   }
 }

@@ -1,4 +1,4 @@
-font pango:Hack Nerd Font 10
+font pango:Hack Nerd Font 8
 
 exec --no-startup-id dex --autostart --environment i3
 
@@ -23,6 +23,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym Mod1+Shift+l exec i3lock
+bindsym Mod1+Shift+s exec systemctl suspend
 
 set $up k
 set $down j 
@@ -37,7 +38,7 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec --no-startup-id kitty
+bindsym Mod4+Return exec --no-startup-id ~/.local/bin/i3-app kitty
 
 # kill focused window
 bindsym Mod4+q kill
@@ -46,7 +47,7 @@ bindsym Mod4+q kill
 # bindsym Mod4+space exec --no-startup-id dmenu_run -l 5
 bindsym Mod4+space exec --no-startup-id rofi -show drun
 # bindsym Mod4+space exec --no-startup-id vicinae toggle
-bindsym Mod4+b exec --no-startup-id google-chrome-stable
+bindsym Mod4+b exec --no-startup-id ~/.local/bin/i3-app google-chrome
 bindsym Mod4+o exec --no-startup-id obsidian
 
 
@@ -210,4 +211,4 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-qrmjwl.jpg
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
-
+set $PATH /home/suraj/.local/bin:$PATH

@@ -36,7 +36,7 @@ background = '0x000000'
 size = 25
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"

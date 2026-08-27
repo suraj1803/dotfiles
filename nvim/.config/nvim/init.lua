@@ -1,3 +1,14 @@
+require("config.general")
+require("config.keymaps")
 require("config.lazy")
-require("suraj.core")
-require("suraj.lsp")
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('clangd')
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true
+    end,
+})
