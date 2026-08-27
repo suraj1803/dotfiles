@@ -1,4 +1,4 @@
-font pango:Hack Nerd Font 8
+font pango:JetBrainsMono Nerd Font 7
 
 exec --no-startup-id dex --autostart --environment i3
 
