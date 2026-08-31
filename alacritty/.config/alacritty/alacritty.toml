@@ -14,7 +14,7 @@ dynamic_padding = true
 startup_mode = "Maximized"
 # decorations = "full"
 title = "Alacritty"
-# opacity = 0.8
+opacity = 0.85
 decorations_theme_variant = "Dark"
 # padding = { x = 4, y = 2 }
 
@@ -33,10 +33,10 @@ multiplier = 3
 [colors.primary]
 background = '0x000000'
 [font]
-size = 25
+size = 18
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "Hack Nerd Font Mono"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
