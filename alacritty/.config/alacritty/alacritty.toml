@@ -15,7 +15,6 @@ startup_mode = "Maximized"
 # decorations = "full"
 title = "Alacritty"
 opacity = 0.85
-decorations_theme_variant = "Dark"
 # padding = { x = 4, y = 2 }
 
 
