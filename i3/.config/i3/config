@@ -4,6 +4,8 @@ font pango:JetBrainsMono Nerd Font 8
 # Scheme author: Michaël Ball
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
+# gaps inner 2
+# gaps outer 2
 set $base00 #171820
 set $base01 #1c1e27
 set $base02 #292c38
@@ -23,23 +25,23 @@ set $base0D #8fa9d1
 set $base0E #aa9bc9
 set $base0F #c09070
 
-client.focused          $base05 $base0D $base00 $base0D $base0C
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background       $base07
+# client.focused          $base05 $base0D $base00 $base0D $base0C
+# client.focused_inactive $base01 $base01 $base05 $base03 $base01
+# client.unfocused        $base01 $base00 $base05 $base01 $base01
+# client.urgent           $base08 $base08 $base00 $base08 $base08
+# client.placeholder      $base00 $base00 $base05 $base00 $base00
+# client.background       $base07
 
 exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
-# for_window [class="^.*"] border pixel 1
-default_border pixel 1
+for_window [class="^.*"] border pixel 1
+# default_border pixel 1
 for_window [class="vicinae"] border pixel 0
 for_window [window_role="pop-up|bubble|dialog|task_dialog|tooltip"] border pixel 0
-hide_edge_borders smart
+# hide_edge_borders smart
 for_window [floating] move position center
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
@@ -237,9 +239,11 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # exec --no-startup-id flameshot 
 # exec --no-startup-id feh --bg-scale ~/Pictures/wallhaven-pojl63.png
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-og61yl.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-d8ojdm.png
 # exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
 set $PATH /home/suraj/.local/bin:$PATH
+exec -no-startup-id dropbox
+
