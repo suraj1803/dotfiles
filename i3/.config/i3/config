@@ -223,4 +223,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
 set $PATH /home/suraj/.local/bin:$PATH
 exec -no-startup-id dropbox
-
+exec --no-startup-id xrdb -merge ~/.Xresources
