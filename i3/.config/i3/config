@@ -48,7 +48,7 @@ floating_modifier Mod4
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod4+Return exec --no-startup-id kitty
+bindsym Mod4+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym Mod4+q kill
@@ -205,9 +205,9 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 
-# bar {
-#   status_command i3status -c  ~/.config/i3/i3status.conf
-# }
+bar {
+  status_command i3status -c  ~/.config/i3/i3status.conf
+}
 
 
 bindsym Mod4+Shift+s exec --no-startup-id flameshot gui
@@ -216,10 +216,10 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # exec --no-startup-id flameshot 
 # exec --no-startup-id feh --bg-scale ~/Pictures/wallhaven-pojl63.png
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-d8ojdm.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-og61yl.png
 # exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
 set $PATH /home/suraj/.local/bin:$PATH
 exec -no-startup-id dropbox
