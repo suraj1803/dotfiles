@@ -1,14 +1,8 @@
-font pango:JetBrainsMono Nerd Font 8
+font pango:GoogleSansCode Nerd Font 8
 
 # gaps inner 2
 # gaps outer 2
 
-set $border-soft #29334d
-
-client.focused          $border-soft  $border-soft  #e6e9f2  $border-soft
-client.unfocused        #1a1b26       #1a1b26       #a9afc4  #1a1b26
-client.focused_inactive #1f2230       #1f2230       #a9afc4  #1f2230
-client.urgent            #3a3040       #3a3040       #f7768e  #3a3040
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -214,8 +208,6 @@ bindsym Mod4+Shift+s exec --no-startup-id flameshot gui
 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
-# exec --no-startup-id flameshot 
-# exec --no-startup-id feh --bg-scale ~/Pictures/wallhaven-pojl63.png
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-og61yl.png
 # exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
