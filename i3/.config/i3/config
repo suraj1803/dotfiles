@@ -1,8 +1,7 @@
 font pango:GoogleSansCode Nerd Font 8
 
 # gaps inner 2
-# gaps outer 2
-
+# gaps outer 2 
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -200,6 +199,8 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 
 bar {
+
+  font pango:GoogleSansCode Nerd Font 6
   status_command i3status -c  ~/.config/i3/i3status.conf
 }
 

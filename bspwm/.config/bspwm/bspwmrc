@@ -42,7 +42,7 @@ bspc config gapless_monocle       true
 bspc config paddingless_monocle   false
 bspc config single_monocle        false
 
-bspc rule -a vicinae border=off
+# bspc rule -a vicinae border=off
 
 # Monitors
 # bspc config remove_disabled_monitors  true
@@ -50,9 +50,8 @@ bspc rule -a vicinae border=off
 # bspc config merge_overlapping_monitors true
 
 picom &
-feh --bg-scale ~/Pictures/wallhaven-5yrwq8.jpg
+feh --bg-scale ~/Pictures/wallhaven-og61yl.png
 xsetroot -cursor_name left_ptr
-sxhkd &
 # lxpolkit &
 # vicinae server &
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
