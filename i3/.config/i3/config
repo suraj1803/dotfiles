@@ -1,4 +1,4 @@
-font pango:GoogleSansCode Nerd Font 8
+font pango:Hack Nerd Font 8
 
 # gaps inner 2
 # gaps outer 2 
@@ -197,10 +197,7 @@ mode "resize" {
 }
 
 bindsym Mod4+r mode "resize"
-
 bar {
-
-  font pango:GoogleSansCode Nerd Font 6
   status_command i3status -c  ~/.config/i3/i3status.conf
 }
 
@@ -210,10 +207,10 @@ bindsym Mod4+Shift+s exec --no-startup-id flameshot gui
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-og61yl.png
-# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
 set $PATH /home/suraj/.local/bin:$PATH
-exec -no-startup-id dropbox
+# exec -no-startup-id dropbox
 exec --no-startup-id xrdb -merge ~/.Xresources
