@@ -1,137 +1,178 @@
-/*
-*
-* Base16 Tomorrow Night
-* Author: Chris Kempson (http://chriskempson.com)
-*
-*/
-
-@define-color base00 #1d1f21;
-@define-color base01 #282a2e;
-@define-color base02 #373b41;
-@define-color base03 #969896;
-@define-color base04 #b4b7b4;
-@define-color base05 #c5c8c6;
-@define-color base06 #e0e0e0;
-@define-color base07 #ffffff;
-@define-color base08 #cc6666;
-@define-color base09 #de935f;
-@define-color base0A #f0c674;
-@define-color base0B #b5bd68;
-@define-color base0C #8abeb7;
-@define-color base0D #81a2be;
-@define-color base0E #b294bb;
-@define-color base0F #a3685a;
-
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "Hack Nerd Font";
-  font-size: 12px;
-  min-height: 0px;
+    font-family: Hack Nerd Font, sans-serif;
+    font-size: 11px;
 }
 
 window#waybar {
-  background: @base00;
-  color: @base05;
-  border-top: 2px solid @base01;
+    background-color: #131313;
+    color: #ffffff;
 }
 
-#workspaces {
-  padding-top: 2px;
-}
+/* ==================== WORKSPACES ==================== */
 
 #workspaces button {
-  padding: 0 2px;
-  color: @base03;
-  transition: all 0.2s ease;
-  border-bottom: 2px solid transparent;
+    padding: 0 4px;
+    background: transparent;
+    color: #6c7086;
+    border: none;
+    border-radius: 0;
 }
 
-#workspaces button:hover {
-  background: @base01;
-  color: @base06;
-}
-
-#workspaces button.active {
-  color: @base0D;
-  background: @base01;
-  border-bottom: 2px solid @base0D;
+#workspaces button.active,
+#workspaces button.focused {
+    color: #ffffff;
+    font-weight: bold;
 }
 
 #workspaces button.urgent {
-  background: @base08;
-  color: @base07;
+    background: #eb4d4b;
+    color: #ffffff;
 }
 
 #window {
-  margin-left: 8px;
-  color: @base06;
-  padding-top: 2px;
+
 }
+
+/* ==================== COMMON MODULES ==================== */
 
 #clock,
+#battery,
 #cpu,
 #memory,
-#battery,
+#disk,
 #network,
 #pulseaudio,
-#tray {
-  padding: 0 10px;
-  color: @base05;
-  background: transparent;
-  padding-top: 2px;
+#tray,
+#power-profiles-daemon {
+    padding: 0 4px;
+    margin: 0 2px;
+    color: #ffffff;
 }
+
+/* ==================== MODULE UNDERLINES ==================== */
 
 #clock {
-  color: @base0D;
-}
-
-#cpu {
-  color: @base0B;
-}
-
-#memory {
-  color: @base0A;
-}
-
-#network {
-  color: @base0C;
-}
-
-#pulseaudio {
-  color: @base0E;
-}
-
-#tray {
-  margin-right: 0;
-  padding-right: 4px;
 }
 
 #battery {
-  color: @base05;
+    color: #a6e3a1;
 }
 
-#battery.warning {
-  color: @base0A;
+#cpu {
+    color: #89b4fa;
 }
 
-#battery.critical {
-  color: @base08;
+#memory {
+    color: #cba6f7;
 }
 
-#battery.charging {
-  color: @base0B;
+#disk {
+    color: #f9e2af;
 }
 
-#battery.charging.warning {
-  color: @base09;
+#network {
+    color: #94e2d5;
 }
 
-tooltip {
-  background: @base01;
-  color: @base06;
+#pulseaudio {
+    color: #f38ba8;
 }
 
-tooltip label {
-  padding: 6px 8px;
+#tray {
+    color: #fab387;
 }
+
+#power-profiles-daemon {
+    color: #89dceb;
+}
+
+#mpd {
+    color: #b4befe;
+}
+
+/* ==================== STATES ==================== */
+
+#battery.charging,
+#battery.plugged {
+    color: #a6e3a1;
+}
+
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+/* ==================== POWER PROFILE ==================== */
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    color: #f38ba8;
+}
+
+#power-profiles-daemon.balanced {
+    color: #f9e2af;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #a6e3a1;
+}
+
+/* ==================== OTHER ==================== */
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#backlight {
+    color: #f5c2e7;
+}
+
+/* ==================== TRAY ==================== */
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* ==================== ANIMATION ==================== */
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Sets the base font size for the tray menu container */
+
+#tray menu menuitem label {
+    font-size: 16px;
+}
+
