@@ -31,10 +31,12 @@ local menu        = "rofi -show drun"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
+  -- hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
+  hl.exec_cmd("bash ./xdph.sh")
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("waybar")
+  hl.exec_cmd("dropbox")
 end)
 
 
