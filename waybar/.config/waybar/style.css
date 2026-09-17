@@ -23,7 +23,6 @@ window#waybar {
     color: #ffffff;
     font-weight: bold;
 }
-
 #workspaces button.urgent {
     background: #eb4d4b;
     color: #ffffff;
