@@ -1,11 +1,12 @@
 * {
     font-family: Hack Nerd Font, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 window#waybar {
-    background-color: #131313;
+    background-color: #000000;
     color: #ffffff;
+    border-bottom: 2px solid #222222;
 }
 
 /* ==================== WORKSPACES ==================== */

@@ -2,7 +2,7 @@
 
 term = "xterm-256color"
 theme = Kitty Default
-background = 111111
+background = 000000
 # background-opacity = 0.85
 #background-blur = false
 maximize = true
