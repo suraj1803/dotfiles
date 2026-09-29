@@ -3,12 +3,12 @@
 term = "xterm-256color"
 theme = Kitty Default
 background = 000000
-# background-opacity = 0.85
+background-opacity = 0.85
 #background-blur = false
 maximize = true
 # fullscreen = true
 confirm-close-surface=false
-font-size = 22
+font-size = 20
 font-family = Hack Nerd Font Mono
 window-padding-x = 0
 window-padding-y = 0

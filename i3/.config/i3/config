@@ -206,11 +206,12 @@ bindsym Mod4+Shift+s exec --no-startup-id flameshot gui
 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-og61yl.png
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-og61yl.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallhaven-oglrv9_1920x1080.png
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec vicinae server
 set $PATH /home/suraj/.local/bin:$PATH
-# exec -no-startup-id dropbox
+# exec -no-startup-id dropbox &
 exec --no-startup-id xrdb -merge ~/.Xresources
