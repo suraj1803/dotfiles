@@ -13,6 +13,7 @@ for_window [class="vicinae"] border pixel 0
 for_window [window_role="pop-up|bubble|dialog|task_dialog|tooltip"] border pixel 0
 # hide_edge_borders smart
 for_window [floating] move position center
+for_window [class="Xdm-app"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 
