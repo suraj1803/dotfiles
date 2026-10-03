@@ -29,22 +29,22 @@ source_dotfiles() {
     fi
 }
 
-# install_packages system
-# install_packages core
-# install_packages fonts
-#
-# xdg-user-dirs-update
-# xdg-user-dirs-gtk-update
-# setup_tmux
-#
-#
-# if [[ "$1" == "i3" ]]; then
-#     echo "Installing i3 packages..."
-#     install_packages i3
-# fi
-#
-# if [[ "$1" == "hyprland" ]]; then
-#     echo "Installing i3 packages..."
-#     install_packages hyprland
-# fi
-#
+install_packages system
+install_packages core
+install_packages fonts
+
+xdg-user-dirs-update
+xdg-user-dirs-gtk-update
+setup_tmux
+
+
+if [[ "$1" == "i3" ]]; then
+    echo "Installing i3 packages..."
+    install_packages i3
+fi
+
+if [[ "$1" == "hyprland" ]]; then
+    echo "Installing i3 packages..."
+    install_packages hyprland
+fi
+
