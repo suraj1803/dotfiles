@@ -3,6 +3,7 @@ require("config.keymaps")
 require("config.lazy")
 
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('gopls')
 -- Configure server settings, capabilities, or filetypes
 vim.lsp.config["ts_ls"] = {
   cmd = { "typescript-language-server", "--stdio" },
