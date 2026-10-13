@@ -2,13 +2,14 @@
 
 term = "xterm-256color"
 theme = Kitty Default
+# theme = iTerm2 Solarized Dark
 background = 000000
 # background-opacity = 0.8
 background-blur =  true
 maximize = true
 # fullscreen = true
 confirm-close-surface=false
-font-size = 20
+font-size = 18
 font-family = Hack Nerd Font Mono
 window-padding-x = 0
 window-padding-y = 0
