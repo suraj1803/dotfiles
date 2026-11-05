@@ -17,5 +17,3 @@ window-padding-balance = true
 
 shell-integration-features = no-cursor,no-sudo,no-title
 gtk-titlebar = false
-window-inherit-working-directory = true
-command = tmux new-session -A -s home
