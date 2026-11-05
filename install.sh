@@ -42,6 +42,9 @@ xdg-user-dirs-update
 xdg-user-dirs-gtk-update
 setup_tmux
 
+mkdir $HOME/Pictures/wallpapers
+cp -r $HOME/dotfiles/wallpapers/* $HOME/Pictures/
+
 
 if [[ "$1" == "i3" ]]; then
     echo "Installing i3 packages..."
