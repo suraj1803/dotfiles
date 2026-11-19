@@ -200,6 +200,7 @@ mode "resize" {
 bindsym Mod4+r mode "resize"
 bar {
   status_command i3status -c  ~/.config/i3/i3status.conf
+  position bottom
 }
 
 
