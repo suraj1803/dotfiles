@@ -1,0 +1,8 @@
+# Swap, backup & undo files
+*.swp
+*.swo
+*~
+
+# OS & editor junk
+.DS_Store
+Thumbs.db
