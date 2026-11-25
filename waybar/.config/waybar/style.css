@@ -1,157 +1,296 @@
+/* ==========================================================================
+   OBSIDIAN MONOLITH — Pixel-Perfect Waybar Theme
+   Designed on a 4px logical grid (exact integer pixels @ 1.25x Wayland scale)
+   ========================================================================== */
+
+@define-color bg_void       #040507;
+@define-color bg_surface    #0b0d12;
+@define-color bg_elevated   #141821;
+@define-color bg_active     #1a202c;
+@define-color border_void   #161a22;
+@define-color border_subtle #1c212c;
+@define-color border_focus  #313b4d;
+
+@define-color fg_primary    #eef2f7;
+@define-color fg_secondary  #d5dce6;
+@define-color fg_muted      #7f8a9c;
+@define-color fg_dim        #485060;
+
+@define-color accent_ice    #98b2c9;
+@define-color accent_sage   #84c7a3;
+@define-color accent_gold   #dcc096;
+@define-color accent_warn   #e5b567;
+@define-color accent_crit   #e06c75;
+
 * {
-    font-family: Hack Nerd Font, sans-serif;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    min-width: 0;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: "JetBrainsMono Nerd Font Propo", "Adwaita Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ==================== BAR CONTAINER ==================== */
+
+window#waybar {
+    background-color: rgba(4, 5, 7, 0.97);
+    color: @fg_secondary;
+    border-bottom: 1px solid @border_void;
+}
+
+.modules-left {
+    margin-left: 8px;
+}
+
+.modules-right {
+    margin-right: 8px;
+}
+
+/* ==================== TOOLTIPS & CONTEXT MENUS ==================== */
+
+tooltip {
+    background-color: #080a0e;
+    border: 1px solid #222836;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @fg_primary;
+    padding: 6px 8px;
+    font-size: 11.5px;
+}
+
+#tray menu {
+    background-color: #080a0e;
+    color: @fg_secondary;
+    border: 1px solid #222836;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+#tray menu menuitem {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: @fg_secondary;
+}
+
+#tray menu menuitem:hover {
+    background-color: @bg_active;
+    color: @fg_primary;
+}
+
+#tray menu menuitem label {
     font-size: 12px;
 }
 
-window#waybar {
-    background-color: #000000;
-    color: #ffffff;
-    border-bottom: 2px solid #222222;
+#tray menu separator {
+    background-color: @border_subtle;
+    min-height: 1px;
+    margin: 4px 0;
+}
+
+/* ==================== CAPSULE ISLANDS ==================== */
+
+#workspaces,
+#clock,
+#hardware,
+#media,
+#connect,
+#power,
+#tray {
+    background-color: @bg_surface;
+    border: 1px solid @border_subtle;
+    border-radius: 7px;
+    margin: 4px 0 5px 0;
+}
+
+#hardware,
+#media,
+#connect,
+#power,
+#tray {
+    margin-left: 6px;
 }
 
 /* ==================== WORKSPACES ==================== */
 
+#workspaces {
+    padding: 2px;
+}
+
 #workspaces button {
-    padding: 0 4px;
-    background: transparent;
-    color: #6c7086;
-    border: none;
-    border-radius: 0;
+    padding: 0 7px;
+    margin: 0 1px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: @fg_secondary;
+    font-weight: 600;
+    transition: all 140ms ease;
+}
+
+#workspaces button.empty {
+    color: @fg_dim;
+    font-weight: 500;
+}
+
+#workspaces button:hover {
+    background-color: @bg_elevated;
+    color: @fg_primary;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    color: #ffffff;
-    font-weight: bold;
+    background-color: @bg_active;
+    color: @fg_primary;
+    border: 1px solid @border_focus;
+    font-weight: 700;
 }
+
 #workspaces button.urgent {
-    background: #eb4d4b;
-    color: #ffffff;
+    background-color: rgba(224, 108, 117, 0.16);
+    color: @accent_crit;
+    border: 1px solid rgba(224, 108, 117, 0.45);
 }
+
+/* ==================== ACTIVE WINDOW TITLE ==================== */
 
 #window {
-
+    margin: 4px 0 5px 10px;
+    padding: 0 8px;
+    color: @fg_muted;
+    font-weight: 500;
 }
 
-/* ==================== COMMON MODULES ==================== */
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#network,
-#pulseaudio,
-#tray,
-#power-profiles-daemon {
-    padding: 0 4px;
-    margin: 0 2px;
-    color: #ffffff;
+window#waybar.empty #window {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
 }
 
-/* ==================== MODULE UNDERLINES ==================== */
+/* ==================== CENTER CLOCK ==================== */
 
 #clock {
+    padding: 0 12px;
+    color: @fg_primary;
+    transition: background-color 140ms ease, border-color 140ms ease;
 }
 
+#clock:hover {
+    background-color: @bg_elevated;
+    border-color: @border_focus;
+}
+
+/* ==================== SEGMENTED CAPSULE ITEMS ==================== */
+
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#power-profiles-daemon {
+    padding: 0 9px;
+    color: @fg_secondary;
+    border-radius: 6px;
+    transition: background-color 140ms ease, color 140ms ease;
+}
+
+/* Subtle internal hairline dividers inside multi-item capsules */
+#cpu,
+#backlight,
+#pulseaudio:not(.mic),
+#bluetooth,
 #battery {
-    color: #a6e3a1;
+    border-right: 1px solid @border_subtle;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-#cpu {
-    color: #89b4fa;
+#memory,
+#pulseaudio.mic,
+#network,
+#power-profiles-daemon {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-#memory {
-    color: #cba6f7;
+#pulseaudio:not(.mic) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-#disk {
-    color: #f9e2af;
-}
-
-#network {
-    color: #94e2d5;
-}
-
-#pulseaudio {
-    color: #f38ba8;
-}
-
-#tray {
-    color: #fab387;
+/* Compact icon-only modules */
+#pulseaudio.mic,
+#bluetooth,
+#power-profiles-daemon {
+    padding: 0 9px;
+    min-width: 14px;
 }
 
 #power-profiles-daemon {
-    color: #89dceb;
+    color: @accent_ice;
 }
 
-#mpd {
-    color: #b4befe;
+/* Interactive hover feedback */
+#cpu:hover,
+#memory:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#power-profiles-daemon:hover {
+    background-color: @bg_elevated;
+    color: @fg_primary;
 }
 
-/* ==================== STATES ==================== */
+/* ==================== SEMANTIC STATES ==================== */
 
-#battery.charging,
-#battery.plugged {
-    color: #a6e3a1;
+#pulseaudio.muted:not(.mic) {
+    color: @fg_muted;
 }
 
-#battery.critical:not(.charging) {
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
+#network.disconnected {
+    color: @accent_crit;
+}
+
+#battery.warning:not(.charging):not(.plugged) {
+    color: @accent_warn;
+}
+
+#battery.critical:not(.charging):not(.plugged) {
+    color: @accent_crit;
+    background-color: rgba(224, 108, 117, 0.14);
+    animation-name: pulse_critical;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#network.disconnected {
-    color: #f38ba8;
-}
-
-#pulseaudio.muted {
-    color: #6c7086;
-}
-
-/* ==================== POWER PROFILE ==================== */
-
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
 #power-profiles-daemon.performance {
-    color: #f38ba8;
+    color: @accent_crit;
 }
 
 #power-profiles-daemon.balanced {
-    color: #f9e2af;
+    color: @accent_ice;
 }
 
 #power-profiles-daemon.power-saver {
-    color: #a6e3a1;
+    color: @accent_sage;
 }
 
-/* ==================== OTHER ==================== */
+/* ==================== SYSTEM TRAY ==================== */
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#tray {
+    padding: 0 9px;
 }
-
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#backlight {
-    color: #f5c2e7;
-}
-
-/* ==================== TRAY ==================== */
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -161,18 +300,13 @@ window#waybar {
     -gtk-icon-effect: highlight;
 }
 
-/* ==================== ANIMATION ==================== */
+/* ==================== ANIMATIONS ==================== */
 
-@keyframes blink {
+@keyframes pulse_critical {
+    from {
+        background-color: rgba(224, 108, 117, 0.10);
+    }
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: rgba(224, 108, 117, 0.28);
     }
 }
-
-/* Sets the base font size for the tray menu container */
-
-#tray menu menuitem label {
-    font-size: 16px;
-}
-
