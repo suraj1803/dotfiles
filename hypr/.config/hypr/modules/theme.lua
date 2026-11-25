@@ -6,9 +6,9 @@ local P = require("modules.palette")
 
 hl.config({
 	general = {
-		-- 8px outer gap aligns tiled windows to the exact pixel with Waybar's outer capsules
+		-- 8px left/right/bottom gap aligns tiled windows with Waybar's outer capsules; 4px top matches Waybar's 4px top margin
 		gaps_in = 4,
-		gaps_out = 8,
+		gaps_out = { top = 4, right = 8, bottom = 8, left = 8 },
 		border_size = 1,
 
 		col = {

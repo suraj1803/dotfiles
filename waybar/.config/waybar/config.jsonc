@@ -2,7 +2,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 36,
+    "height": 28,
     "spacing": 0,
     "reload_style_on_change": true,
 
@@ -42,7 +42,7 @@
         "max-length": 42,
         "separate-outputs": true,
         "icon": true,
-        "icon-size": 14,
+        "icon-size": 13,
         "rewrite": {
             "(.*) — Mozilla Firefox": "$1",
             "(.*) - Google Chrome": "$1",
@@ -223,7 +223,7 @@
 
     "tray": {
         "icon-size": 15,
-        "spacing": 8,
+        "spacing": 7,
         "show-passive-items": true
     }
 }

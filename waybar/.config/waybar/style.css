@@ -3,18 +3,18 @@
    Designed on a 4px logical grid (exact integer pixels @ 1.25x Wayland scale)
    ========================================================================== */
 
-@define-color bg_void       #040507;
-@define-color bg_surface    #0b0d12;
-@define-color bg_elevated   #141821;
-@define-color bg_active     #1a202c;
-@define-color border_void   #161a22;
-@define-color border_subtle #1c212c;
-@define-color border_focus  #313b4d;
+@define-color bg_void       transparent;
+@define-color bg_surface    rgba(8, 10, 15, 0.52);
+@define-color bg_elevated   rgba(20, 25, 35, 0.72);
+@define-color bg_active     rgba(28, 35, 48, 0.84);
+@define-color border_void   transparent;
+@define-color border_subtle rgba(152, 178, 201, 0.14);
+@define-color border_focus  rgba(152, 178, 201, 0.30);
 
 @define-color fg_primary    #eef2f7;
 @define-color fg_secondary  #d5dce6;
-@define-color fg_muted      #7f8a9c;
-@define-color fg_dim        #485060;
+@define-color fg_muted      #94a0b4;
+@define-color fg_dim        #556073;
 
 @define-color accent_ice    #98b2c9;
 @define-color accent_sage   #84c7a3;
@@ -30,16 +30,16 @@
     box-shadow: none;
     text-shadow: none;
     font-family: "JetBrainsMono Nerd Font Propo", "Adwaita Sans", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
 }
 
 /* ==================== BAR CONTAINER ==================== */
 
 window#waybar {
-    background-color: rgba(4, 5, 7, 0.97);
+    background-color: transparent;
     color: @fg_secondary;
-    border-bottom: 1px solid @border_void;
+    border: none;
 }
 
 .modules-left {
@@ -104,8 +104,8 @@ tooltip label {
 #tray {
     background-color: @bg_surface;
     border: 1px solid @border_subtle;
-    border-radius: 7px;
-    margin: 4px 0 5px 0;
+    border-radius: 6px;
+    margin: 4px 0 0 0;
 }
 
 #hardware,
@@ -119,13 +119,13 @@ tooltip label {
 /* ==================== WORKSPACES ==================== */
 
 #workspaces {
-    padding: 2px;
+    padding: 1px 2px;
 }
 
 #workspaces button {
-    padding: 0 7px;
+    padding: 0 6px;
     margin: 0 1px;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid transparent;
     background-color: transparent;
     color: @fg_secondary;
@@ -160,8 +160,8 @@ tooltip label {
 /* ==================== ACTIVE WINDOW TITLE ==================== */
 
 #window {
-    margin: 4px 0 5px 10px;
-    padding: 0 8px;
+    margin: 4px 0 0 8px;
+    padding: 0 6px;
     color: @fg_muted;
     font-weight: 500;
 }
@@ -175,7 +175,7 @@ window#waybar.empty #window {
 /* ==================== CENTER CLOCK ==================== */
 
 #clock {
-    padding: 0 12px;
+    padding: 0 10px;
     color: @fg_primary;
     transition: background-color 140ms ease, border-color 140ms ease;
 }
@@ -195,9 +195,9 @@ window#waybar.empty #window {
 #network,
 #battery,
 #power-profiles-daemon {
-    padding: 0 9px;
+    padding: 0 8px;
     color: @fg_secondary;
-    border-radius: 6px;
+    border-radius: 5px;
     transition: background-color 140ms ease, color 140ms ease;
 }
 
@@ -229,8 +229,8 @@ window#waybar.empty #window {
 #pulseaudio.mic,
 #bluetooth,
 #power-profiles-daemon {
-    padding: 0 9px;
-    min-width: 14px;
+    padding: 0 7px;
+    min-width: 13px;
 }
 
 #power-profiles-daemon {
@@ -289,7 +289,7 @@ window#waybar.empty #window {
 /* ==================== SYSTEM TRAY ==================== */
 
 #tray {
-    padding: 0 9px;
+    padding: 0 8px;
 }
 
 #tray > .passive {
