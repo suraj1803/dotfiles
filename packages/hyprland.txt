@@ -3,6 +3,8 @@ waybar
 hyprpaper
 hyprshot
 hyprlock
+hypridle
+swayidle
 hyprshutdown
 xdg-desktop-portal-hyprland
 hyprpolkitagent

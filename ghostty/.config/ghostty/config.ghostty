@@ -10,7 +10,7 @@ font-size = 15
 # Smoked obsidian glass (pairs with Hyprland 3-pass blur)
 background = 060709
 foreground = e6edf3
-background-opacity = 0.88
+background-opacity = 0.8
 background-blur = true
 
 selection-background = 1e2636
