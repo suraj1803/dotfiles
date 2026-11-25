@@ -2,65 +2,72 @@
     monitor = 0
     follow = mouse
 
-    width = 360
-    height = 120
+    width = (280, 380)
+    height = (0, 140)
     origin = top-right
-    offset = 12x12
+    offset = (8, 8)
 
     scale = 0
-
     notification_limit = 5
 
-    frame_width = 1
-    frame_color = "#89b4fa"
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 340
+    progress_bar_corner_radius = 3
+    highlight = "#98b2c9"
 
-    separator_height = 2
-    separator_color = frame
+    frame_width = 1
+    frame_color = "#2e3748"
+    gap_size = 6
+    separator_height = 1
+    separator_color = "#1c212c"
 
     padding = 12
-    horizontal_padding = 12
-    text_icon_padding = 8
+    horizontal_padding = 14
+    text_icon_padding = 12
+    corner_radius = 10
 
-    corner_radius = 12
-
-    font = JetBrainsMono Nerd Font 10
-
+    font = JetBrainsMono Nerd Font Propo 10
+    line_height = 2
     markup = full
-    format = "<b>%s</b>\n%b"
+    format = "<span foreground='#eef2f7' weight='bold'>%s</span>\n<span foreground='#aeb7c4'>%b</span>"
 
     alignment = left
     vertical_alignment = center
-
     show_age_threshold = 60
     ellipsize = middle
-
     stack_duplicates = true
-    hide_duplicate_count = true
+    hide_duplicate_count = false
 
     icon_position = left
     min_icon_size = 32
-    max_icon_size = 32
+    max_icon_size = 40
 
     mouse_left_click = close_current
-    mouse_middle_click = do_action
+    mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
     idle_threshold = 120
 
 [urgency_low]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#45475a"
-    timeout = 2
-
-[urgency_normal]
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
-    frame_color = "#89b4fa"
+    background = "#080a0ee8"
+    foreground = "#aeb7c4"
+    frame_color = "#1c212c"
+    highlight = "#84c7a3"
     timeout = 3
 
+[urgency_normal]
+    background = "#080a0ee8"
+    foreground = "#eef2f7"
+    frame_color = "#2e3748"
+    highlight = "#98b2c9"
+    timeout = 5
+
 [urgency_critical]
-    background = "#1e1e2e"
-    foreground = "#f38ba8"
-    frame_color = "#f38ba8"
-    timeout = 4
+    background = "#0d080be8"
+    foreground = "#f5dde0"
+    frame_color = "#e06c75"
+    highlight = "#e06c75"
+    timeout = 0
