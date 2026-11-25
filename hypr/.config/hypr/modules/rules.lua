@@ -98,6 +98,20 @@ hl.layer_rule({
 })
 
 hl.layer_rule({
+	name = "launcher-fuzzel-blur",
+	match = { namespace = "launcher" },
+	blur = true,
+	ignore_alpha = 0.2,
+})
+
+hl.layer_rule({
+	name = "swayosd-blur",
+	match = { namespace = "swayosd" },
+	blur = true,
+	ignore_alpha = 0.2,
+})
+
+hl.layer_rule({
 	name = "vicinae-blur",
 	match = { namespace = "vicinae" },
 	blur = false,

@@ -5,36 +5,37 @@
 term = "xterm-256color"
 
 font-family = "Hack Nerd Font Mono"
-font-size = 15
+font-size = 16
 
+theme = Kitty Default
 # Smoked obsidian glass (pairs with Hyprland 3-pass blur)
-background = 060709
-foreground = e6edf3
+# background = 060709
+# foreground = e6edf3
 background-opacity = 0.8
 background-blur = true
 
-selection-background = 1e2636
-selection-foreground = f0f4f8
-cursor-color = 98b2c9
-cursor-text = 060709
-
-# Refined Obsidian & Starlight 16-color ANSI palette
-palette = 0=#0b0d12
-palette = 1=#e06c75
-palette = 2=#84c7a3
-palette = 3=#dcc096
-palette = 4=#8aa8c7
-palette = 5=#a89ec9
-palette = 6=#89c4b8
-palette = 7=#c8d1de
-palette = 8=#4b5466
-palette = 9=#eb848c
-palette = 10=#9ad6b5
-palette = 11=#e8cfa8
-palette = 12=#98b2c9
-palette = 13=#bdb4db
-palette = 14=#9ed4c9
-palette = 15=#eef2f7
+# selection-background = 1e2636
+# selection-foreground = f0f4f8
+# cursor-color = 98b2c9
+# cursor-text = 060709
+#
+# # Refined Obsidian & Starlight 16-color ANSI palette
+# palette = 0=#0b0d12
+# palette = 1=#e06c75
+# palette = 2=#84c7a3
+# palette = 3=#dcc096
+# palette = 4=#8aa8c7
+# palette = 5=#a89ec9
+# palette = 6=#89c4b8
+# palette = 7=#c8d1de
+# palette = 8=#4b5466
+# palette = 9=#eb848c
+# palette = 10=#9ad6b5
+# palette = 11=#e8cfa8
+# palette = 12=#98b2c9
+# palette = 13=#bdb4db
+# palette = 14=#9ed4c9
+# palette = 15=#eef2f7
 
 # Architectural inner breathing room
 window-padding-x = 0

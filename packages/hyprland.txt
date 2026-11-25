@@ -1,10 +1,38 @@
+# ==================== CORE COMPOSITOR & SESSION ====================
 hyprland
-waybar
+uwsm
 hyprpaper
-hyprshot
 hyprlock
 hypridle
 swayidle
 hyprshutdown
-xdg-desktop-portal-hyprland
 hyprpolkitagent
+hyprlauncher
+
+# ==================== WAYLAND PORTALS & QT/GTK ====================
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+qt5-wayland
+qt6-wayland
+capitaine-cursors
+
+# ==================== BAR, NOTIFICATIONS & OSD ====================
+waybar
+dunst
+libnotify
+swayosd
+network-manager-applet
+
+# ==================== PRODUCTIVITY, CLIPBOARD & CAPTURE ====================
+ghostty
+dolphin
+wl-clipboard
+cliphist
+fuzzel
+grim
+slurp
+hyprshot
+satty
+hyprpicker
+hyprsunset
+udiskie
