@@ -1,47 +1,114 @@
 # ==========================================================================
-# GHOSTTY — Obsidian & Starlight Smoked Glass Terminal
+# GHOSTTY 1.4 — Productive Wayland Configuration
+# Reload live anytime with: Ctrl + Shift + ,
 # ==========================================================================
 
-term = "xterm-256color"
+# ==================== TYPOGRAPHY ====================
 
 font-family = "Hack Nerd Font Mono"
 font-size = 16
+font-thicken = false
+minimum-contrast = 1.1
 
-theme = Kitty Default
-# Smoked obsidian glass (pairs with Hyprland 3-pass blur)
-# background = 060709
-# foreground = e6edf3
-background-opacity = 0.8
+# ==================== BUILT-IN DARK THEME & GLASS ====================
+# Swap effortlessly between Ghostty's best dark-obsidian built-in themes:
+#   Cursor Dark | Vesper | GitHub Dark Default | Carbonfox | Vercel | Oxocarbon
+theme = TokyoNight
+
+background = #111111
+background-opacity = 0.82
 background-blur = true
 
-# selection-background = 1e2636
-# selection-foreground = f0f4f8
-# cursor-color = 98b2c9
-# cursor-text = 060709
-#
-# # Refined Obsidian & Starlight 16-color ANSI palette
-# palette = 0=#0b0d12
-# palette = 1=#e06c75
-# palette = 2=#84c7a3
-# palette = 3=#dcc096
-# palette = 4=#8aa8c7
-# palette = 5=#a89ec9
-# palette = 6=#89c4b8
-# palette = 7=#c8d1de
-# palette = 8=#4b5466
-# palette = 9=#eb848c
-# palette = 10=#9ad6b5
-# palette = 11=#e8cfa8
-# palette = 12=#98b2c9
-# palette = 13=#bdb4db
-# palette = 14=#9ed4c9
-# palette = 15=#eef2f7
+# Subtle dim & crisp divider for inactive Ghostty splits
+unfocused-split-opacity = 0.78
+split-divider-color = #242b38
 
-# Architectural inner breathing room
-window-padding-x = 0
-window-padding-y = 0
-window-padding-balance = true
+# ==================== WINDOW & LAYOUT ====================
 
-confirm-close-surface = false
-shell-integration-features = no-cursor,no-sudo,no-title
 gtk-titlebar = false
+window-decoration = none
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
+window-padding-color = extend
+window-vsync = true
+window-inherit-working-directory = true
+split-inherit-working-directory = true
+window-inherit-font-size = true
+window-save-state = always
+confirm-close-surface = false
+resize-overlay = never
+
+# ==================== SHELL INTEGRATION & SSH ====================
+# ssh-terminfo + ssh-env automatically fix remote SSH 'xterm-ghostty unknown'
+# errors without downgrading your local TERM capabilities.
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,path,ssh-env,ssh-terminfo
+
+# ==================== CURSOR, MOUSE & LINKS ====================
+
+cursor-style = block
+cursor-style-blink = false
+cursor-click-to-move = true
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = precision:1,discrete:3
+link-url = true
+link-previews = true
+
+# ==================== CLIPBOARD & SCROLLBACK ====================
+
+# Selecting text automatically copies to Wayland clipboard (+ cliphist)
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
+
+# ~50 MB compressed scrollback buffer
+scrollback-limit = 50000000
+
+# ==================== LONG-COMMAND NOTIFICATIONS ====================
+# Sends a Dunst desktop notification if a command taking >10s finishes
+# while you are on another workspace or window.
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 10s
+bell-features = no-system,no-audio,attention
+
+# ==================== DROP-DOWN QUICK TERMINAL ====================
+
+quick-terminal-position = top
+quick-terminal-screen = main
+quick-terminal-animation-duration = 0.15
+quick-terminal-autohide = true
+
+# ==================== PRODUCTIVITY KEYBINDINGS ====================
+
+# Config & inspection
+keybind = ctrl+shift+comma=reload_config
+keybind = ctrl+shift+p=write_screen_file:open,plain
+
+# Splits (create, navigate with Alt + h/j/k/l, resize, zoom like Tmux)
+keybind = ctrl+shift+\=new_split:right
+keybind = ctrl+shift+minus=new_split:down
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+keybind = ctrl+shift+z=toggle_split_zoom
+keybind = ctrl+shift+equal=equalize_splits
+
+# Tabs & visual tab overview
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+a=toggle_tab_overview
+keybind = alt+1=goto_tab:1
+keybind = alt+2=goto_tab:2
+keybind = alt+3=goto_tab:3
+keybind = alt+4=goto_tab:4
+keybind = alt+5=goto_tab:5
+
+# Jump directly between shell command prompts (OSC-133)
+keybind = ctrl+shift+up=jump_to_prompt:-1
+keybind = ctrl+shift+down=jump_to_prompt:1
