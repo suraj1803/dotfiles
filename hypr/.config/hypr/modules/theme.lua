@@ -8,8 +8,8 @@ hl.config({
 	general = {
 		-- 8px left/right/bottom gap aligns tiled windows with Waybar's outer capsules; 4px top matches Waybar's 4px top margin
 		gaps_in = 4,
-		gaps_out = { top = 4, right = 8, bottom = 8, left = 8 },
-		border_size = 1,
+		gaps_out = { top = 4, right = 4, bottom = 4, left = 4 },
+		border_size = 2,
 
 		col = {
 			active_border = P.colors.active_border,

@@ -19,6 +19,10 @@ hl.bind(
 	mainMod .. " + SHIFT + R",
 	hl.dsp.exec_cmd("pkill -USR2 -x waybar || waybar &")
 )
+hl.bind(
+	mainMod .. " + SHIFT + F",
+	hl.dsp.exec_cmd("pkill -USR1 -x waybar || waybar &")
+)
 
 -- Window state & layout controls
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
