@@ -23,8 +23,10 @@ M.colors = {
 	glow_inactive = "rgba(00000000)",
 	shadow_active = "rgba(00000099)",
 	shadow_inactive = "rgba(00000044)",
-	group_active = "rgba(1a202cee)",
+	group_active = "rgba(1b212ce8)",
 	group_inactive = "rgba(0b0d12cc)",
+	group_locked_active = "rgba(1b212ce8)",
+	group_locked_inactive = "rgba(0b0d12cc)",
 	text_primary = "0xffeef2f7",
 	text_muted = "0xff7f8a9c",
 }

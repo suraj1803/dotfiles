@@ -81,24 +81,52 @@ hl.config({
 	},
 
 	group = {
+		auto_group = true,
+		insert_after_current = true,
+		focus_removed_window = true,
+		merge_groups_on_drag = true,
+		merge_groups_on_groupbar = true,
 		col = {
 			border_active = P.colors.active_border,
 			border_inactive = P.colors.inactive_border,
+			border_locked_active = P.colors.active_border,
+			border_locked_inactive = P.colors.inactive_border,
 		},
 		groupbar = {
+			enabled = true,
+			blur = true,
 			font_family = "JetBrainsMono Nerd Font Propo",
-			font_size = 11,
-			height = 22,
-			rounding = 6,
-			rounding_power = 3.0,
+			font_size = 9,
+			font_weight_active = "bold",
+			font_weight_inactive = "normal",
+			height = 14,
+			indicator_height = 0,
+			indicator_gap = 0,
+			gaps_in = 4,
+			gaps_out = 2,
+			keep_upper_gap = false,
+			rounding = 10,
+			rounding_power = 3.5,
 			gradients = true,
+			gradient_rounding = 10,
+			gradient_rounding_power = 3.5,
+			render_titles = true,
+			scrolling = true,
+			middle_click_close = true,
 			text_color = P.colors.text_primary,
 			text_color_inactive = P.colors.text_muted,
 			col = {
 				active = P.colors.group_active,
 				inactive = P.colors.group_inactive,
+				locked_active = P.colors.group_locked_active,
+				locked_inactive = P.colors.group_locked_inactive,
 			},
 		},
+	},
+
+	binds = {
+		-- Makes SUPER + h / l (and left / right) cycle tabs inside a group first
+		movefocus_cycles_groupfirst = true,
 	},
 
 	dwindle = {

@@ -31,7 +31,48 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen_state({ action = "toggle", internal = 2, client = 0 }))
 
--- Directional focus (Arrows + Vim keys)
+-- Tabbed layout (i3-style workspace tabbing via Hyprland groups + groupbar)
+hl.bind(mainMod .. " + W", function()
+	local active = hl.get_active_window()
+	local ws = hl.get_active_workspace()
+	if not active or not ws then
+		return
+	end
+
+	local tiled = {}
+	for _, w in ipairs(hl.get_workspace_windows(ws)) do
+		if w.mapped and not w.floating then
+			table.insert(tiled, w)
+		end
+	end
+
+	-- If already grouped, ungroup all windows back into tiled splits
+	if active.group then
+		hl.dispatch(hl.dsp.group.toggle())
+		return
+	end
+
+	-- Create a group on the active window and merge all other tiled windows on this workspace into tabs
+	hl.dispatch(hl.dsp.group.toggle())
+	active = hl.get_active_window()
+	if active and active.group then
+		for _, w in ipairs(tiled) do
+			if w.address ~= active.address and not w.group then
+				active.group:add(w)
+			end
+		end
+	end
+end)
+
+-- Single-window group toggle, lock, and moving windows into/out of groups
+hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.group.lock_active())
+hl.bind(mainMod .. " + ALT + h", hl.dsp.group.move_window({ direction = "left" }))
+hl.bind(mainMod .. " + ALT + l", hl.dsp.group.move_window({ direction = "right" }))
+hl.bind(mainMod .. " + ALT + k", hl.dsp.group.move_window({ direction = "up" }))
+hl.bind(mainMod .. " + ALT + j", hl.dsp.group.move_window({ direction = "down" }))
+
+-- Directional focus & tabbed group switching (MOD + h/l & arrows cycle tabs first inside a group)
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
